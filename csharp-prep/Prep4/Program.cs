@@ -30,6 +30,10 @@ class Program
         {
             jcSum += jcNum;
         }
-        Console.WriteLine("The sum is:" + jcSum);
+        Console.WriteLine($"The sum is: {jcSum}");
+
+        // Compute the average
+        float jcAverage = (jcSum / jcNumbers.Count);
+        Console.WriteLine($"The average is: {jcAverage}");
     }
 }
