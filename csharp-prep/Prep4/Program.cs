@@ -10,6 +10,7 @@ class Program
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
         do
         {
+            Console.Write("Enter Number: ");
             string jcNewStr = Console.ReadLine();
             int jcNewNum = int.Parse(jcNewStr);
             if (jcNewNum != 0)
