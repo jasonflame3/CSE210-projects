@@ -10,7 +10,7 @@ class Program
         // int jcMagicNumInt = int.Parse(jcMagicNumStr);
 
         Random randomGenerator = new Random();
-        int jcMagicNumInt = randomGenerator.Next(1,100);
+        int jcMagicNumInt = randomGenerator.Next(1,101);
 
         bool jcFound = false;
         do         {
