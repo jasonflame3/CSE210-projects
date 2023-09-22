@@ -27,7 +27,7 @@ class Program
             }
             else if (jcGuessInt == jcMagicNumInt)
             {
-                Console.WriteLine("Youe guessed my number!");
+                Console.WriteLine("You guessed my number!");
                 jcFound = true;
             }
         } while (! jcFound);
