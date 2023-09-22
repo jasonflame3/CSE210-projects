@@ -26,14 +26,25 @@ class Program
 
         // Find the sum
         int jcSum = 0;
+        int jcLargest = jcNumbers[0];
         foreach (int jcNum in jcNumbers)
         {
             jcSum += jcNum;
+        
+            //find the largest number
+            if (jcNum > jcLargest)
+            {
+                jcLargest = jcNum;
+            }
+            
         }
         Console.WriteLine($"The sum is: {jcSum}");
 
         // Compute the average
         float jcAverage = (jcSum / jcNumbers.Count);
         Console.WriteLine($"The average is: {jcAverage}");
+
+        // print the largest
+        Console.WriteLine($"The largest number is: {jcLargest}");
     }
 }
