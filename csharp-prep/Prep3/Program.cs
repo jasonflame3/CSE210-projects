@@ -13,18 +13,18 @@ class Program
             Console.WriteLine("what is your first guess");
             string jcGuessStr = Console.ReadLine();
             int jcGuessInt = int.Parse(jcGuessStr);
-            if (jcGuessInt > jcMagicNumInt)
+            if (jcGuessInt < jcMagicNumInt)
             {
                 Console.WriteLine("Higher");
             }
-            else if (jcGuessInt < jcMagicNumInt)
+            else if (jcGuessInt > jcMagicNumInt)
             {
                 Console.WriteLine("Lower");
             }
             else if (jcGuessInt == jcMagicNumInt)
             {
                 Console.WriteLine("Youe guessed my number");
-
+                jcFound = true;
             }
         } while (! jcFound);
     }
