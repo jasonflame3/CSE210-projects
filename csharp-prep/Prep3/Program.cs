@@ -4,13 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("What is the magic number");
+        Console.Write("What is the magic number?");
         string jcMagicNumStr = Console.ReadLine();
         int jcMagicNumInt = int.Parse(jcMagicNumStr);
 
         bool jcFound = false;
         do         {
-            Console.WriteLine("what is your first guess");
+            Console.Write("what is your first guess?");
             string jcGuessStr = Console.ReadLine();
             int jcGuessInt = int.Parse(jcGuessStr);
             if (jcGuessInt < jcMagicNumInt)
@@ -23,7 +23,7 @@ class Program
             }
             else if (jcGuessInt == jcMagicNumInt)
             {
-                Console.WriteLine("Youe guessed my number");
+                Console.WriteLine("Youe guessed my number!");
                 jcFound = true;
             }
         } while (! jcFound);
