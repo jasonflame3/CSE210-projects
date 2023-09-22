@@ -16,6 +16,10 @@ class Program
             {
                 jcNumbers.Add(jcNewNum);
             }
+            else
+            {
+                jcSential = true;
+            }
         } while (!jcSential);
     }
 }
