@@ -10,21 +10,17 @@ class Program
         job1._startYear = 2020;
         job1._endYear = 2023;
 
-        Console.WriteLine(job1._company);
-
         Job job2 = new Job();
         job2._company = "Lenovo";
         job2._jobTitle = "Laptop Repair Technician";
         job2._startYear = 2018;
         job2._endYear = 2020;
 
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
-
         Resume resume1 = new Resume();
+        resume1._name = "Jason Chandler";
         resume1._jobs.Add(job1);
         resume1._jobs.Add(job2);
 
-        Console.WriteLine(resume1._jobs[0]._jobTitle);
+        resume1.Display();
             }
 }
