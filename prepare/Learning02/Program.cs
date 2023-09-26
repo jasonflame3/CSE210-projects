@@ -22,8 +22,8 @@ class Program
         job2.DisplayJobDetails();
 
         Resume resume1 = new Resume();
-        resume1._jobs[0] = job1;
-        resume1._jobs[1] = job2;
+        resume1._jobs.Add(job1);
+        resume1._jobs.Add(job2);
 
         Console.WriteLine(resume1._jobs[0]._jobTitle);
             }
