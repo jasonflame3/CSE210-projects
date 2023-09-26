@@ -11,5 +11,7 @@ class Program
         job1._jobTitle = "Software Engineer";
         job1._startYear = 2020;
         job1._endYear = 2023;
+
+        Console.WriteLine(job1._company);
             }
 }
