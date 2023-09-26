@@ -13,5 +13,13 @@ class Program
         job1._endYear = 2023;
 
         Console.WriteLine(job1._company);
+
+        Job job2 = new Job();
+        job2._company = "Lenovo";
+        job2._jobTitle = "Laptop Repair Technician";
+        job2._startYear = 2018;
+        job2._endYear = 2020;
+
+        Console.WriteLine(job2._company);
             }
 }
