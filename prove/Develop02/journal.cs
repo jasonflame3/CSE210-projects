@@ -1,7 +1,9 @@
 /*
 This is the class for journal
 */
-
+using System;
+using System.Net.Http.Headers;
+using System.Text.Json;
 public class Journal
 {
     public Journal()
@@ -28,7 +30,7 @@ public class Journal
 
     public void load()
     {
-
+        string text = File.ReadAllText(_jcFilename);
     }
 
     public void DisplayMenu()
