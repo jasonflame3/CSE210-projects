@@ -17,4 +17,6 @@ class Program
 /*
 https://stackoverflow.com/questions/13297563/read-and-parse-a-json-file-in-c-s
 https://www.educative.io/answers/how-to-read-a-json-file-in-c-sharp
+https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-8-0
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/this
 */
