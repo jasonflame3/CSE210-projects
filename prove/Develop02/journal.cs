@@ -18,23 +18,31 @@ public class Journal
 
     }
 
-    public void writeEntry()
+    public void WriteEntry()
     {
-
+        // this method will allow the user to write new entries.
     }
 
-    public void save()
+    public void Save()
     {
-
+        // this method will save the entries to a file.
+        string JsonString = JsonSerializer.Serialize(this);
+        File.WriteAllText(_jcFilename,JsonString);
     }
 
-    public void load()
+    public void Load()
     {
+        // this method will load the journal from a file
         string text = File.ReadAllText(_jcFilename);
+        var jcJournal = JsonSerializer.Deserialize<Journal>(text);
+
+        _jcEntries = jcJournal._jcEntries;
+        _jcPrompts = jcJournal._jcPrompts;
     }
 
     public void DisplayMenu()
     {
+        //this meathod displays the menu for the user
         Console.WriteLine("Welcome to the journal program. What would you like to do?");
         Console.WriteLine("Write a new entry.");
         Console.WriteLine("Save journal to file");
