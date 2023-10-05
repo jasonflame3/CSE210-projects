@@ -6,8 +6,8 @@ Author: Jason Chandler
 Date: (c) 2023
 */
 using System;
+using System.IO;
 using System.Net.Http.Headers;
-using System.Text.Json;
 public class Journal
 {
     public Journal()
@@ -55,18 +55,31 @@ public class Journal
     public void Save()
     {
         // this method will save the entries to a file.
-        string JsonString = JsonSerializer.Serialize(this);
-        File.WriteAllText(_jcFilename,JsonString);
+
+        using (StreamWriter outputFile = new StreamWriter(_jcFilename))
+        {
+            foreach(Entry entry in _jcEntries)
+            {
+                outputFile.WriteLine($"{entry._jcDate}~~{entry._jcPrompt}~~{entry._jcWords}");
+            }
+        }
     }
 
     public void Load()
     {
         // this method will load the journal from a file
-        string text = File.ReadAllText(_jcFilename);
-        var jcJournal = JsonSerializer.Deserialize<Journal>(text);
-
-        _jcEntries = jcJournal._jcEntries;
-        _jcPrompts = jcJournal._jcPrompts;
+        string[] lines = File.ReadAllLines(_jcFilename);
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("~~");
+            Entry jcCurrent = new Entry
+            {
+                _jcDate = parts[0],
+                _jcPrompt = parts[1],
+                _jcWords = parts[2]
+            };
+            _jcEntries.Add(jcCurrent);
+        }
     }
 
     public void DisplayMenu()

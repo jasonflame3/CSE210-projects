@@ -14,7 +14,11 @@ class Program
     static void Main(string[] args)
     {
         Journal journal = new Journal();
-        journal._jcPrompts.Add("");
+        journal._jcPrompts.Add("How are you today?");
+        journal._jcPrompts.Add("Did anything happen at school?");
+        journal._jcPrompts.Add("What is something your glad you did today?");
+        journal._jcPrompts.Add("What was the best thing about today?");
+        journal._jcPrompts.Add("How is your love life?");
 
         int jcSential = 0;
         int jcChoice = 0;
@@ -31,7 +35,7 @@ class Program
                 Console.WriteLine("Your input must be an integer between 1 and 5");
                 } 
             
-            } while ((jcChoice < 6) & (jcChoice > 0));
+            } while ((jcChoice > 5) || (jcChoice < 1));
 
             switch (jcChoice)
             {
@@ -43,14 +47,19 @@ class Program
                     // save to a file
                     Console.Write("What is the file name? ");
                     journal._jcFilename = Console.ReadLine();
-
                     journal.Save();
+                    Console.WriteLine("saving to file...");
                     break;
                 case 3:
                     //load from a file
+                    Console.Write("What is the file name? ");
+                    journal._jcFilename = Console.ReadLine();
+                    journal.Load();
+                    Console.WriteLine("load in file...");
                     break;
                 case 4:
                     //display entries
+                    journal.Display();
                     break;
                 case 5:
                     // quit
@@ -70,4 +79,9 @@ https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json
 https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/this
 https://www.educative.io/answers/how-to-generate-a-random-integer-in-c-sharp
 https://www.w3schools.com/cs/cs_switch.php
+https://www.w3schools.com/cs/cs_exceptions.php
+https://www.w3schools.com/cs/cs_operators_logical.php
+https://zetcode.com/csharp/json/
+https://www.c-sharpcorner.com/article/working-with-json-string-in-C-Sharp/
+https://www.tutorialsteacher.com/articles/convert-object-to-json-in-csharp
 */
