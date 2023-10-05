@@ -1,5 +1,9 @@
 /*
-This is the class for journal
+Name: <journal program>
+Purpose: < an application to help users write a journal
+by removing excuses not to do it by giving the user a prompt.>
+Author: Jason Chandler
+Date: (c) 2023
 */
 using System;
 using System.Net.Http.Headers;
@@ -15,12 +19,37 @@ public class Journal
 
     public void Display()
     {
-
+        // will iterate through each entry and display the date, prompt, and response(words).
+        foreach(Entry entry in _jcEntries)
+        {
+            Console.WriteLine($"Date:{entry._jcDate} - Prompt: {entry._jcPrompt}");
+            Console.WriteLine(entry._jcWords);
+            Console.WriteLine("");
+        }
     }
 
     public void WriteEntry()
     {
         // this method will allow the user to write new entries.
+        Entry jcCurrentEntry = new Entry();
+        
+        // Get the date
+        DateTime theCurrentTime = DateTime.Now;
+        jcCurrentEntry._jcDate = theCurrentTime.ToShortDateString();
+        
+        // Get the prompt and display it
+        System.Random random = new System.Random();
+        int jcPromptIndex = random.Next(5);
+        jcCurrentEntry._jcPrompt = _jcPrompts[jcPromptIndex];
+        Console.WriteLine(jcCurrentEntry._jcPrompt);
+        
+        // Get the users response
+        jcCurrentEntry._jcWords = Console.ReadLine();
+
+        // Add the current entry to the list
+        _jcEntries.Add(jcCurrentEntry);
+
+        // Datetime syntax from the code helps section of the assignment
     }
 
     public void Save()
@@ -49,10 +78,5 @@ public class Journal
         Console.WriteLine("Load journal from file");
         Console.WriteLine("Display Entries");
         Console.WriteLine("Quit");
-    }
-
-    public void quit()
-    {
-
     }
 }

@@ -13,6 +13,6 @@ public class Entry
 
     public string _jcWords;
     public string _jcPrompt;
-    public int _jcDate;
+    public string _jcDate;
 
 }
