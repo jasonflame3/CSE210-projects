@@ -68,17 +68,24 @@ public class Journal
     public void Load()
     {
         // this method will load the journal from a file
-        string[] lines = File.ReadAllLines(_jcFilename);
-        foreach (string line in lines)
-        {
-            string[] parts = line.Split("~~");
-            Entry jcCurrent = new Entry
+        try{
+            string[] lines = File.ReadAllLines(_jcFilename);
+            foreach (string line in lines)
             {
-                _jcDate = parts[0],
-                _jcPrompt = parts[1],
-                _jcWords = parts[2]
-            };
-            _jcEntries.Add(jcCurrent);
+                string[] parts = line.Split("~~");
+                Entry jcCurrent = new Entry
+                {
+                    _jcDate = parts[0],
+                    _jcPrompt = parts[1],
+                    _jcWords = parts[2]
+                };
+                _jcEntries.Add(jcCurrent);
+            }
+            Console.WriteLine("load in file...\n");
+        }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("Your file was not found \n");
         }
     }
 
@@ -86,10 +93,10 @@ public class Journal
     {
         //this meathod displays the menu for the user
         Console.WriteLine("Welcome to the journal program. What would you like to do?");
-        Console.WriteLine("Write a new entry.");
-        Console.WriteLine("Save journal to file");
-        Console.WriteLine("Load journal from file");
-        Console.WriteLine("Display Entries");
-        Console.WriteLine("Quit");
+        Console.WriteLine("1: Write a new entry.");
+        Console.WriteLine("2: Save journal to file");
+        Console.WriteLine("3: Load journal from file");
+        Console.WriteLine("4: Display Entries");
+        Console.WriteLine("5: Quit");
     }
 }

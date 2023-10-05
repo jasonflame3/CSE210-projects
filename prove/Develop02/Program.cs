@@ -29,6 +29,7 @@ class Program
                 Console.Write("What would you like to do? ");
                 try{
                 jcChoice = int.Parse(Console.ReadLine());
+                Console.WriteLine("");
                 }
                 catch (FormatException)
                 {
@@ -48,14 +49,13 @@ class Program
                     Console.Write("What is the file name? ");
                     journal._jcFilename = Console.ReadLine();
                     journal.Save();
-                    Console.WriteLine("saving to file...");
+                    Console.WriteLine("saving to file...\n");
                     break;
                 case 3:
                     //load from a file
                     Console.Write("What is the file name? ");
                     journal._jcFilename = Console.ReadLine();
                     journal.Load();
-                    Console.WriteLine("load in file...");
                     break;
                 case 4:
                     //display entries
