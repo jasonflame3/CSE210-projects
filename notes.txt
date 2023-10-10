@@ -3,4 +3,5 @@ Notes:
 An object is an instance of a class.
 
 
-encapsulation: the use of code to hide implementation for the use of cleaning up and speeding up code.
+Encapsulation: the use of code to hide implementation for the use of cleaning up and speeding up code.
+Encapsulation includes using internal consrtuctors to within consrtuctors to 
