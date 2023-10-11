@@ -14,6 +14,7 @@ public class Fraction
     public Fraction(int jcTop)
     {
         _jcTop = jcTop;
+        _jcBottom = 1;
     }
     public Fraction(int jcTop, int jcBottom)
     {
@@ -39,7 +40,7 @@ public class Fraction
 
     public string GetFractionString()
     {
-        return $"{_jcTop} / {_jcBottom}";
+        return $"{_jcTop}/{_jcBottom}";
     }
 
     public double GetDecimalValue()
