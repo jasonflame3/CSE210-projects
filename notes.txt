@@ -2,6 +2,7 @@ Notes:
 
 An object is an instance of a class.
 
+Abtraction: the use of code to represent some object that exists in real life.
 
 Encapsulation: the use of code to hide implementation for the use of cleaning up and speeding up code.
 Encapsulation includes using internal consrtuctors to within consrtuctors to 
