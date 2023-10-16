@@ -12,7 +12,7 @@ public class kpWord
     private string _kpWord; 
     private bool _kpHidden; 
 
-    public kpHidewords(self)
+    public kpHidewords()
     {
 
     }
