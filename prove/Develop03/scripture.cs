@@ -19,4 +19,17 @@ class srScripture
         srInputWords = srWords;
         srInputReference = srReference;
     }
+
+    //convert the inputted string of text into a list of Word objects
+    private void srParseWords()
+    {
+        //turn the input string into an array of strings
+        string[] srTempArray = srInputWords.Split(" ");
+
+        //loop through the array, turn each string into a Word object, and add it to the list of words
+        foreach (string word in srTempArray)
+        {
+            srWords.Add(new Word());
+        }
+    }
 }
