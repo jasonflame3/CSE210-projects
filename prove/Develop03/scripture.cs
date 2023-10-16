@@ -12,7 +12,7 @@ class srScripture
     private string srInputWords;
     private string srInputReference;
 
-    private List<Word> srWords = new List<Word>();
+    private List<kpWord> srWords = new List<kpWord>();
     private Reference srReference;
 
     //Constructors
@@ -42,7 +42,7 @@ class srScripture
         //loop through the array, turn each string into a Word object, and add it to the list of words
         foreach (string word in srTempArray)
         {
-            srWords.Add(new Word());
+            srWords.Add(new kpWord());
         }
     }
 

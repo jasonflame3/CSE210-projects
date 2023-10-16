@@ -13,9 +13,15 @@ class Program
         srScripture jcScripture = new srScripture(jcWords,jcRef);
         return jcScripture;
     }
+
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
-        jcGetScripture();
+        srScripture jcScripture = jcGetScripture();
+        bool jcDone = true;
+        do
+        {
+            jcScripture.srDisplay();
+            Console.WriteLine();
+        } while (jcDone == false);
     }
 }
