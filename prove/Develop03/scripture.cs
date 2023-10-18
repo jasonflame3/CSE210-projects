@@ -49,7 +49,7 @@ class srScripture
     //convert the inputted string reference into a Reference object
     private void srParseReference()
     {
-        string[] srTempArray = srInputReference.Split(" ");
+        string[] srTempArray = srInputReference.Split(' ', ':');
         srReference = new lhReference(srTempArray[0], srTempArray[1], srTempArray[2]);
     }
 
@@ -93,7 +93,7 @@ class srScripture
                 break;
             }
         }
-
+        Console.WriteLine(srIsDone);
         return srIsDone;
     }
 }
