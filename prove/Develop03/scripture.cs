@@ -93,7 +93,7 @@ class srScripture
                 break;
             }
         }
-        Console.WriteLine(srIsDone);
+
         return srIsDone;
     }
 }
