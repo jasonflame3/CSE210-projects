@@ -22,7 +22,7 @@ class Program
         do
         {
             Console.Clear();
-            jcScripture.srDisplay();
+            Console.WriteLine(jcScripture.srDisplay());
             Console.WriteLine();
             Console.WriteLine("Press Enter to continue or Q to quit:");
             string jcChoice = Console.ReadLine();

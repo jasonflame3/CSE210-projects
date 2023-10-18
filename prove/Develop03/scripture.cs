@@ -49,18 +49,18 @@ class srScripture
     //convert the inputted string reference into a Reference object
     private void srParseReference()
     {
-        string[] srTempArray = srInputReference.Split(" ");
+        string[] srTempArray = srInputReference.Split(' ', ':');
         srReference = new lhReference(srTempArray[0], srTempArray[1], srTempArray[2]);
     }
 
     //return the reference and scripture together as a string
     public string srDisplay()
     {
-        string srOutput = srReference.ToString() + "\n";
+        string srOutput = srReference.lhToString() + "\n";
 
         foreach (kpWord word in srWords)
         {
-            srOutput = srOutput + word.kpDisplay();
+            srOutput = srOutput + word.kpDisplay() + " ";
         }
 
         return srOutput;
