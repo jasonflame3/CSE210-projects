@@ -13,7 +13,7 @@ class lhReference
     private string _lhchapter;
     private string _lhverse;
 
-    public lhReference(_lhbook, _lhchapter, _lhverse)
+    public lhReference(string _lhbook, string _lhchapter, string _lhverse)
     {
         lhReference = _lhbook, _lhchapter, _lhverse;
     }
@@ -23,3 +23,4 @@ class lhReference
         string lhReference;
     }
 }
+ 
