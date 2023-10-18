@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -17,11 +18,30 @@ class Program
     static void Main(string[] args)
     {
         srScripture jcScripture = jcGetScripture();
-        bool jcDone = true;
+        bool jcDone = false;
         do
         {
+            Console.Clear();
             jcScripture.srDisplay();
             Console.WriteLine();
+            Console.WriteLine("Press Enter to continue or Q to quit:");
+            string jcChoice = Console.ReadLine();
+            if (jcChoice == "")
+            {
+                if (jcScripture.srIsDone() == true)
+                {
+                    jcDone = true;
+                }
+                else
+                {
+                    jcScripture.srUpdate();
+                }
+            }
+            else if (jcChoice.ToLower() == "q")
+            {
+                jcDone = true;
+            }
+            
         } while (jcDone == false);
     }
 }
