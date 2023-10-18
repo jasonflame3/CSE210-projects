@@ -60,7 +60,7 @@ class srScripture
 
         foreach (kpWord word in srWords)
         {
-            srOutput = srOutput + word.kpDisplay();
+            srOutput = srOutput + word.kpDisplay() + " ";
         }
 
         return srOutput;
