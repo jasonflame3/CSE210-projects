@@ -52,4 +52,17 @@ class srScripture
         string[] srTempArray = srInputReference.Split(" ");
         srReference = new lhReference(srTempArray[0], srTempArray[1], srTempArray[2]);
     }
+
+    //return the reference and scripture
+    public string srDisplay()
+    {
+        string srOutput = srReference.ToString() + "\n";
+
+        foreach (kpWord word in srWords)
+        {
+            srOutput = srOutput + word.kpDisplay();
+        }
+
+        return srOutput;
+    }
 }
