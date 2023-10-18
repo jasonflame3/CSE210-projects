@@ -25,7 +25,7 @@ public class kpWord
        int kpLength = _kpWord.Length;
        _kpHidden = true;
        _kpWord = ""; 
-       for (int i = 0; i<= kpLength; i++)
+       for (int i = 0; i < kpLength; i++)
        {
         _kpWord += "_";
        }
