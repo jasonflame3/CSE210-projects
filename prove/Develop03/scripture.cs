@@ -53,7 +53,7 @@ class srScripture
         srReference = new lhReference(srTempArray[0], srTempArray[1], srTempArray[2]);
     }
 
-    //return the reference and scripture
+    //return the reference and scripture together as a string
     public string srDisplay()
     {
         string srOutput = srReference.ToString() + "\n";
@@ -64,5 +64,11 @@ class srScripture
         }
 
         return srOutput;
+    }
+
+    //select a number of random Word objects and hide them
+    public void srUpdate()
+    {
+        //do stuff
     }
 }
