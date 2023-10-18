@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 /*
 W06 Prove: Developer 
 Purpose: To hide words within the scriptures until finally the whole scripture is gone. 
-Name: Kamas Peterson 
+Name: Kamas Peterson, Lindsay Hurdman, Sean Reading, Jason Chandler 
 (c) 2023
 Refrences:
 https://www.w3schools.com/cs/cs_for_loop.php
