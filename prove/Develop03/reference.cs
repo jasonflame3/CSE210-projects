@@ -27,7 +27,7 @@ class lhReference
     public string lhtoString()
     {
         string lhreferenceString = $"{_lhbook} {_lhchapter}:{_lhverse}";
-        retrun lhreferenceString;
+        return lhreferenceString;
     }
 }
  
