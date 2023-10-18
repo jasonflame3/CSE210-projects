@@ -24,9 +24,10 @@ class lhReference
     }
 
     // Function to turn reference into string.
-    public lhtoString(string lhReference)
+    public string lhtoString()
     {
-        string lhReference;
+        string lhreferenceString = $"{_lhbook} {_lhchapter}:{_lhverse}";
+        retrun lhreferenceString;
     }
 }
  
