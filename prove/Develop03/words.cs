@@ -22,7 +22,7 @@ public class kpWord
        _kpWord = ""; 
        for (int i = 0; i<= kpLength; i++)
        {
-        _kpwords += "_";
+        _kpWord += "_";
        }
        
 
