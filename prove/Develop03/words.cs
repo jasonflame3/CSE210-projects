@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 /*
@@ -29,7 +30,6 @@ public class kpWord
         _kpWord += "_";
        }
        
-
     }
     
     public kpWord(string kpWord, bool kpHidden)
@@ -43,6 +43,11 @@ public class kpWord
     {
         //Returns the words taken.
         return _kpWord;
+    }
+
+    public bool kpIsHidden()
+    {
+        return _kpHidden;
     }
 
 }
