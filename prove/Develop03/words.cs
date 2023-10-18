@@ -23,7 +23,7 @@ public class kpWord
     {
         // Counts the amount of word hidden and replaces it with underscore
        int kpLength = _kpWord.Length;
-        
+       _kpHidden = true;
        _kpWord = ""; 
        for (int i = 0; i<= kpLength; i++)
        {
