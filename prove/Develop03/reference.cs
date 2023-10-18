@@ -4,22 +4,27 @@ using System;
 W06 Prove: Developer 
 Purpose: Stores the book, chapter, and verse.
 Name: Lindsay Hurdman
+Sources: Chat GPT
 (c) 2023
 */
 
 class lhReference
 {
-    private string _book;
-    private string _chapter;
-    private string _verse;
+    // Create atributes.
+    private string _lhbook;
+    private string _lhchapter;
+    private string _lhverse;
 
-    public lhReference(_book, _chapter, _verse)
+    public lhReference(string lhbook, string lhchapter, string lhverse)
     {
-        lhReference = _book, _chapter, _verse;
+        _lhbook = lhbook;
+        _lhchapter = lhchapter;
+        _lhverse = lhverse;
     }
 
-    public lhReference(lhReference)
+    public lhReference(string lhReference)
     {
         string lhReference;
     }
 }
+ 
