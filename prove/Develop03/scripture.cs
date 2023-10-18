@@ -56,7 +56,7 @@ class srScripture
     //return the reference and scripture together as a string
     public string srDisplay()
     {
-        string srOutput = srReference.ToString() + "\n";
+        string srOutput = srReference.lhToString() + "\n";
 
         foreach (kpWord word in srWords)
         {
