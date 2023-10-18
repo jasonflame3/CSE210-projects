@@ -69,6 +69,20 @@ class srScripture
     //select a number of random Word objects and hide them
     public void srUpdate()
     {
-        //do stuff
+        Random srRandom = new Random();
+        int srWordsToHide = 3; //change this if you want to hide more or less words
+
+        for (int x = 1; x <= srWordsToHide; x++)
+        {
+            int srIndex = srRandom.Next(srWords.Count);
+            kpWord srHiddenWord = srWords[srIndex];
+            srHiddenWord.kpHidewords();
+        }
+    }
+
+    //returns whether or not the entire scripture is hidden
+    public bool srIsDone()
+    {
+        return false;
     }
 }
