@@ -18,8 +18,7 @@ class lhReference
     // Constructor for reference.
     public lhReference(string lhBook, string lhChapter, string lhVerse)
     {
-        _lhBook
- = lhBook;
+        _lhBook = lhBook;
         _lhChapter = lhChapter;
         _lhVerse = lhVerse;
     }
