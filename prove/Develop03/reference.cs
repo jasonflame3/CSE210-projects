@@ -11,24 +11,26 @@ Sources: Chat GPT for errors
 class lhReference
 {
     // Create atributes book, chapter, and verse.
-    private string _lhbook;
-    private string _lhchapter;
-    private string _lhverse;
+    private string _lhBook;
+    private string _lhChapter;
+    private string _lhVerse;
 
     // Constructor for reference.
-    public lhReference(string lhbook, string lhchapter, string lhverse)
+    public lhReference(string lhBook, string lhChapter, string lhVerse)
     {
-        _lhbook = lhbook;
-        _lhchapter = lhchapter;
-        _lhverse = lhverse;
+        _lhBook
+ = lhBook;
+        _lhChapter = lhChapter;
+        _lhVerse = lhVerse;
     }
 
     // Function to turn reference into string.
     // Returns a string.
-    public string lhtoString()
+    public string lhToString()
     {
-        string lhreferenceString = $"{_lhbook} {_lhchapter}:{_lhverse}";
-        return lhreferenceString;
+        string lhReferenceString = $"{_lhBook
+} {_lhChapter}:{_lhVerse}";
+        return lhReferenceString;
     }
 }
  
