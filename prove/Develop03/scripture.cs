@@ -13,7 +13,7 @@ class srScripture
     private string srInputReference;
 
     private List<kpWord> srWords = new List<kpWord>();
-    private Reference srReference;
+    private lhReference srReference;
 
     //Constructors
     public srScripture()
@@ -42,13 +42,14 @@ class srScripture
         //loop through the array, turn each string into a Word object, and add it to the list of words
         foreach (string word in srTempArray)
         {
-            srWords.Add(new kpWord());
+            srWords.Add(new kpWord(word, false));
         }
     }
 
     //convert the inputted string reference into a Reference object
     private void srParseReference()
     {
-        srReference = new Reference();
+        string[] srTempArray = srInputReference.Split(" ");
+        srReference = new lhReference(srTempArray[0], srTempArray[1], srTempArray[2]);
     }
 }
