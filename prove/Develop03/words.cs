@@ -22,7 +22,7 @@ public class kpWord
        _kpWord = ""; 
        for (int i = 0; i<= kpLength; i++)
        {
-        _kpwords += "_";
+        _kpWord += "_";
        }
        
 
@@ -34,10 +34,9 @@ public class kpWord
         _kpHidden = kpHidden;
     }
 
-    public void kpDisplay()
+    public string kpDisplay()
     {
-        Console.WriteLine($"{}");
-        Console.ReadLine(); 
+        return _kpWord;
     }
 
 }
