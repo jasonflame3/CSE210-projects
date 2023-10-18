@@ -34,10 +34,9 @@ public class kpWord
         _kpHidden = kpHidden;
     }
 
-    public void kpDisplay()
+    public string kpDisplay()
     {
-        Console.WriteLine($"{}");
-        Console.ReadLine(); 
+        return _kpWord;
     }
 
 }
