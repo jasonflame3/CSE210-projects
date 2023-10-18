@@ -9,6 +9,7 @@ Name: Kamas Peterson
 (c) 2023
 Refrences:
 https://www.w3schools.com/cs/cs_for_loop.php
+https://www.tutorialspoint.com/How-to-calculate-the-length-of-the-string-using-Chash#:~:text=Use%20the%20String.,the%20length%20of%20the%20string.
 */
 public class kpWord
 {
@@ -21,7 +22,7 @@ public class kpWord
        _kpWord = ""; 
        for (int i = 0; i<= kpLength; i++)
        {
-        _kpwords += "_";
+        _kpWord += "_";
        }
        
 
@@ -33,10 +34,9 @@ public class kpWord
         _kpHidden = kpHidden;
     }
 
-    public void kpDisplay()
+    public string kpDisplay()
     {
-        Console.WriteLine($"{}");
-        Console.ReadLine(); 
+        return _kpWord;
     }
 
 }
