@@ -13,12 +13,16 @@ https://www.tutorialspoint.com/How-to-calculate-the-length-of-the-string-using-C
 */
 public class kpWord
 {
+    // attributes
     private string _kpWord; 
     private bool _kpHidden; 
 
+    // behaviors 
     public void kpHidewords()
     {
+        // Counts the amount of word hidden and replaces it with underscore
        int kpLength = _kpWord.Length;
+        
        _kpWord = ""; 
        for (int i = 0; i<= kpLength; i++)
        {
@@ -30,12 +34,14 @@ public class kpWord
     
     public kpWord(string kpWord, bool kpHidden)
     {
+        // Calls then and makes them public 
         _kpWord = kpWord; 
         _kpHidden = kpHidden;
     }
 
     public string kpDisplay()
     {
+        //Returns the words taken.
         return _kpWord;
     }
 
