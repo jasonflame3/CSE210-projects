@@ -79,4 +79,10 @@ class srScripture
             srHiddenWord.kpHidewords();
         }
     }
+
+    //returns whether or not the entire scripture is hidden
+    public bool srIsDone()
+    {
+        return false;
+    }
 }
