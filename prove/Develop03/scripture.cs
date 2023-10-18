@@ -83,6 +83,17 @@ class srScripture
     //returns whether or not the entire scripture is hidden
     public bool srIsDone()
     {
-        return false;
+        bool srIsDone = true;
+
+        foreach(kpWord word in srWords)
+        {
+            if (word.kpIsHidden() == false)
+            {
+                srIsDone = false;
+                break;
+            }
+        }
+
+        return srIsDone;
     }
 }
