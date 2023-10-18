@@ -15,6 +15,7 @@ class lhReference
     private string _lhchapter;
     private string _lhverse;
 
+    // Constructor
     public lhReference(string lhbook, string lhchapter, string lhverse)
     {
         _lhbook = lhbook;
@@ -22,7 +23,8 @@ class lhReference
         _lhverse = lhverse;
     }
 
-    public lhReference(string lhReference)
+    // Function to turn reference into string.
+    public lhtoString(string lhReference)
     {
         string lhReference;
     }
