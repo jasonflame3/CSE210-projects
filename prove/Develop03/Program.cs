@@ -1,6 +1,11 @@
 using System;
 using System.Runtime.CompilerServices;
-
+/*
+W06 Prove: Developer 
+Purpose: Create a prgram to help the user memorize scriptures by slowly hidding words
+Name:  Jason Chandler, Kamas Peterson, Lindsay Hurdman, Sean Reading
+(c) 2023
+*/
 class Program
 {
     static srScripture jcGetScripture()

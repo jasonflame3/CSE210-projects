@@ -3,7 +3,7 @@ using System;
 /*
 W06 Prove: Developer 
 Purpose: Stores the book, chapter, and verse.
-Name: Lindsay Hurdman
+Name: Lindsay Hurdman, Kamas Peterson, Sean Reading, Jason Chandler 
 Sources: Chat GPT for errors
 (c) 2023
 */

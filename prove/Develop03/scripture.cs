@@ -3,7 +3,7 @@ using System;
 /*
 W06 Prove: Developer 
 Purpose: To store a Scripture object, which contains a Reference object and a list of Word objects
-Name: Sean Reading
+Name: Sean Reading, Kamas Peterson, Lindsay Hurdman, Jason Chandler 
 (c) 10/16/2023
 */
 
