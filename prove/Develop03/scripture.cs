@@ -53,7 +53,7 @@ class srScripture
         int srColonIndex = srInputReference.LastIndexOf(':');
 
         string srItem1 = srInputReference.Substring(0, srSpaceIndex);
-        string srItem2 = srInputReference.Substring(srSpaceIndex, (srColonIndex - srSpaceIndex));
+        string srItem2 = srInputReference.Substring(srSpaceIndex + 1, (srColonIndex - srSpaceIndex - 1));
         string srItem3 = srInputReference.Substring(srColonIndex + 1);
 
         srReference = new lhReference(srItem1, srItem2, srItem3);
