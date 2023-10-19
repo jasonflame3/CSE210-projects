@@ -49,8 +49,14 @@ class srScripture
     //convert the inputted string reference into a Reference object
     private void srParseReference()
     {
-        string[] srTempArray = srInputReference.Split(' ', ':');
-        srReference = new lhReference(srTempArray[0], srTempArray[1], srTempArray[2]);
+        int srSpaceIndex = srInputReference.LastIndexOf(' ');
+        int srColonIndex = srInputReference.LastIndexOf(':');
+
+        string srItem1 = srInputReference.Substring(0, srSpaceIndex);
+        string srItem2 = srInputReference.Substring(srSpaceIndex, (srColonIndex - srSpaceIndex));
+        string srItem3 = srInputReference.Substring(srColonIndex + 1);
+
+        srReference = new lhReference(srItem1, srItem2, srItem3);
     }
 
     //return the reference and scripture together as a string
