@@ -5,4 +5,8 @@ An object is an instance of a class.
 Abtraction: the use of code to represent some object that exists in real life.
 
 Encapsulation: the use of code to hide implementation for the use of cleaning up and speeding up code.
-Encapsulation includes using internal consrtuctors to within consrtuctors to 
+Encapsulation includes using internal consrtuctors to within consrtuctors to
+
+Inhertance:
+The use of a simpler class to make more complacted ones. 
+Structures are classes with no methods. 
