@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 /*
 W08 Prove: Developer 
 Provied each activity with a random prompt
@@ -9,8 +10,7 @@ Lindsay Herdman, Kamas Peterson
 class Prompt : Activity
 {
     private string _kpPrompt;
-
-    public Prompt(string kpName, string kpDecription, float kpTime, string kpPrompt) : base(kpName, kpDecription, kpTime);
+    public Prompt(string kpName, string kpDecription, float kpTime, string kpPrompt) :base(kpName, kpDecription, kpTime)
     {
         _kpPrompt = kpPrompt; 
     }
