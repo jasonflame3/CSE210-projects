@@ -8,5 +8,10 @@ Lindsay Herdman, Kamas Peterson
 
 class Prompt : Activity
 {
+    protected string _prompt;
 
+    public Prompt(string prompt) : base()
+    {
+        _prompt = prompt; 
+    }
 }

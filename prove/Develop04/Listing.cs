@@ -2,9 +2,9 @@ using System;
 
 class Listing : Prompt
 {
-    private string _lhNumberOfItems;
+   
 
-    private Listing()--Base()
+    private Listing() -- Base()
     {
 
     }
