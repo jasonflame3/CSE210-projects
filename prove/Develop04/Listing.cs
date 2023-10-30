@@ -12,22 +12,22 @@ class Listing : Prompt
 {  
     private string _lhNumberOfItems;
 
-    private Listing(string lhName, string lhDecription, float lhTime, string lhPrompt, string lhNumberOfItems) : base(lhName, lhDecription, lhTime, lhPrompt);
+    private Listing(string lhName, string lhDecription, float lhTime, string lhPrompt, string lhNumberOfItems) : base(lhName, lhDecription, lhTime, lhPrompt)
     {
-        lhNumberOfItems = _lhNumberOfItems;
+        _lhNumberOfItems = lhNumberOfItems;
     }
 
-    public DoListing()
-    {
-
-    }
-
-    private DisplayNumberOfItems()
+    public void DoListing()
     {
 
     }
 
-    private NewItem()
+    private void DisplayNumberOfItems()
+    {
+
+    }
+
+    private void NewItem()
     {
 
     }
