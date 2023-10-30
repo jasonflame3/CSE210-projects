@@ -16,7 +16,7 @@ public Activity(string jcName, string jcDecription, float jcTime)
     srTime =jcTime;
 }
 
-protected void jcAnimation(){
+public void jcAnimation(){
     int srTimes = 3; //Change this to increase or decrease the duration of the animation
     string srBack = "\b \b"; //the backspace character
 
@@ -45,7 +45,7 @@ protected void jcDisplayEndMessage(){
 
 }
 
-protected void jcPause(float jcTime){
+public void jcPause(float jcTime){
 // jcTime is measured in seconds
 int jcMilliseconds = (int)(jcTime * 1000);
 Thread.Sleep(jcMilliseconds);
