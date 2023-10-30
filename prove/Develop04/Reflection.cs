@@ -12,9 +12,9 @@ class Reflection : Prompt
 {
     private string _kpQuestions <list>;
 
-    public Reflection(string lhName, string lhDecription, float lhTime, string lhPrompt, string questions) : base(lhName, lhDecription, lhTime, lhPrompt)
+    public Reflection(string lhName, string lhDecription, float lhTime, string lhPrompt, string kpQuestions) : base(lhName, lhDecription, lhTime, lhPrompt)
     {
-        questions = _questions
+        kpQuestions = _kpQuestions;
     }
 
     public DoReflection()
@@ -24,6 +24,6 @@ class Reflection : Prompt
 
     private GetQuesitons()
     {
-        return _questions
+        return _kpQuestions;
     }
 }
