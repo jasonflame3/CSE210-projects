@@ -14,7 +14,7 @@ class Listing : Prompt
 
     private Listing(string lhName, string lhDecription, float lhTime, string lhPrompt, string lhNumberOfItems) : base(lhName, lhDecription, lhTime, lhPrompt)
     {
-        lhNumberOfItems = _lhNumberOfItems
+        lhNumberOfItems = _lhNumberOfItems;
     }
 
     public DoListing()
