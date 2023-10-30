@@ -8,10 +8,16 @@ Lindsay Herdman, Kamas Peterson
 
 class Prompt : Activity
 {
-    protected string _prompt;
+    private string _kpPrompt;
 
-    public Prompt(string prompt) : base()
+    public Prompt(string kpName, string kpDecription, float kpTime, string kpPrompt) : base(kpName, kpDecription, kpTime)
     {
-        _prompt = prompt; 
+        _kpPrompt = kpPrompt; 
     }
+    
+    protected string kpGetPrompt ()
+    {
+        return _kpPrompt;
+    }
+   
 }
