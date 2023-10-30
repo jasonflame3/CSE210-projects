@@ -24,10 +24,10 @@ protected void jcAnimation(){
 
     for (int x = 1; x <= srTimes; x++) //do the animation
     {
-    Console.Write(srBack + "-");
-    Console.Write(srBack + "\\");
-    Console.Write(srBack + "|");
-    Console.Write(srBack + "/");
+        Console.Write(srBack + "-");
+        Console.Write(srBack + "\\");
+        Console.Write(srBack + "|");
+        Console.Write(srBack + "/");
     }
 
     Console.WriteLine(""); //end the space for the animation
