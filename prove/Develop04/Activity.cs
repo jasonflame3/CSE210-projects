@@ -1,0 +1,6 @@
+using Systen;
+
+class Activity
+{
+
+}
