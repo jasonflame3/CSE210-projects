@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        Activity activity = new Activity("test", "test", 5);
+
+        activity.jcAnimation();
+        activity.jcPause(5);
+        activity.jcAnimation();
     }
 }
