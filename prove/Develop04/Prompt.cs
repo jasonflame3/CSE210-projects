@@ -12,7 +12,7 @@ class Prompt : Activity
 
     public Prompt(string kpName, string kpDecription, float kpTime, string kpPrompt) : base(kpName, kpDecription, kpTime)
     {
-        _kpPrompt = kpPrompt; 
+        kpPrompt = _kpPrompt; 
     }
     
     protected string kpGetPrompt ()

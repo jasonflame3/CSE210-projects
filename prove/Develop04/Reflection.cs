@@ -10,7 +10,7 @@ Lindsay Herdman, Kamas Peterson
 
 class Reflection : Prompt
 {
-    private string _questions <list>;
+    private string _kpQuestions <list>;
 
     public Reflection(string lhName, string lhDecription, float lhTime, string lhPrompt, string questions) : base(lhName, lhDecription, lhTime, lhPrompt)
     {
@@ -24,6 +24,6 @@ class Reflection : Prompt
 
     private GetQuesitons()
     {
-        
+        return _questions
     }
 }
