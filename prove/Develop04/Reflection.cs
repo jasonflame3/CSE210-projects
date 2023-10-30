@@ -22,7 +22,7 @@ class Reflection : Prompt
 
     }
 
-    private GetQuesitons()
+    private string GetQuesitons()
     {
         return _kpQuestions;
     }
