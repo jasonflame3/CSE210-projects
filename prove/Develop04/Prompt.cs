@@ -10,7 +10,7 @@ class Prompt : Activity
 {
     private string _kpPrompt;
 
-    public Prompt(string kpName, string kpDecription, float kpTime, string kpPrompt) : base(kpName, kpDecription, kpTime)
+    public Prompt(string kpName, string kpDecription, float kpTime, string kpPrompt) : base(kpName, kpDecription, kpTime);
     {
         kpPrompt = _kpPrompt; 
     }
