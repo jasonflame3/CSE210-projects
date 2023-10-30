@@ -14,7 +14,42 @@ public Activity(string jcName, string jcDecription, float jcTime)
     srName = jcName;
     srDescription = jcDecription;
     srTime =jcTime;
+}
+
+protected void jcAnimation(){
+
+
 
 }
+
+protected void jcDisplayStartMessage(){
+
+
+
+}
+
+protected void jcDisplayEndMessage(){
+
+
+
+}
+
+protected void jcPause(float jcTime){
+
+
+
+}
+protected void jcCountdown(){
+
+
+
+}
+
+
+
+
+
+
+
 
 }
