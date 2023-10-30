@@ -10,7 +10,7 @@ class Prompt : Activity
 {
     protected string _prompt;
 
-    public Prompt(prompt) : base()
+    public Prompt(string prompt) : base()
     {
         _prompt = prompt; 
     }
