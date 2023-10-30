@@ -12,7 +12,7 @@ class Reflection : Prompt
 {
     private string _questions <list>;
 
-    public Reflection(string questions) : base(prompt)
+    public Reflection(string lhName, string lhDecription, float lhTime, string lhPrompt, string questions) : base(lhName, lhDecription, lhTime, lhPrompt)
     {
         questions = _questions
     }

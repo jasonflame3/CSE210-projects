@@ -12,7 +12,7 @@ class Listing : Prompt
 {  
     private string _lhNumberOfItems;
 
-    private Listing(string lhNumberOfItems) : base(prompt)
+    private Listing(string lhName, string lhDecription, float lhTime, string lhPrompt, string lhNumberOfItems) : base(lhName, lhDecription, lhTime, lhPrompt)
     {
         lhNumberOfItems = _lhNumberOfItems
     }
