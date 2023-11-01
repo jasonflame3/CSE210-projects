@@ -14,7 +14,7 @@ class Listing : Prompt
     private string[] _lhItemList;
 
     // Constructor
-    public Listing(string lhName, string lhDecription, float lhTime, string lhPrompt) : base(lhName, lhDecription, lhTime, lhPrompt)
+    public Listing(string lhName, string lhDescription, float lhTime, string lhPrompt) : base(lhName, lhDescription, lhTime, lhPrompt)
     {
         // Set to 0.
         _lhNumberOfItems = "0";
@@ -24,7 +24,9 @@ class Listing : Prompt
 
     public void DoListing()
     {
-        // Pull Prompt from Prompt Class.
+        // Get Name, Description, and Prompt from Prompt Class.
+        Console.WriteLine(lhName);
+        Console.WriteLine(lhDescription);
         Console.WriteLine(lhPrompt);
 
         // The spinner thingy.
