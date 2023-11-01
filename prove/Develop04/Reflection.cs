@@ -3,26 +3,30 @@ using System;
 /*
 W08 Prove: Developer 
 Activity Reflection
-Lindsay Herdman, Kamas Peterson 
+Lindsay Hurdman, Kamas Peterson 
 (c)2023
 */
 
 
 class Reflection : Prompt
 {
-    private string _kpQuestions <list>;
+    private List <string> _kpQuestions = new List<string>;
 
-    public Reflection(string lhName, string lhDecription, float lhTime, string lhPrompt, string kpQuestions) : base(lhName, lhDecription, lhTime, lhPrompt)
+    public Reflection(string kpName, string kpDescription, float kpTime, string kpPrompt, List<string> kpQuestions) : base(kpName, kpDescription, kpTime, kpPrompt)
     {
-        kpQuestions = _kpQuestions;
+        _kpQuestions = kpQuestions;
     }
 
-    public DoReflection()
+    public kpDoReflection()
     {
+        Console.WriteLine(kpPrompt);
 
+        jcAnimation(); 
+
+        jcPause
     }
 
-    private string GetQuesitons()
+    private List<string> kpGetQuesitons()
     {
         return _kpQuestions;
     }
