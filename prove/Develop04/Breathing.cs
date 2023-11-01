@@ -1,5 +1,12 @@
 using System;
 
+/*
+W08 Prove: Developer 
+Breathing Activity
+Sean Reading
+11/1/2023
+*/
+
 class Breathing : Activity
 {
 
