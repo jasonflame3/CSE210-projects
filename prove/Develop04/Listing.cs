@@ -47,7 +47,7 @@ class Listing : Prompt
         DateTime  lhFutureTime = startTime.AddSecounds(lhTime);
         Thread.Sleep(3000);
 
-        // Do unitl specified time.
+        // Do until specified time.
         while (lhCurrentTime < lhFutureTime)
         {
             DateTime lhCurrentTime = DateTime.Now;
@@ -65,7 +65,7 @@ class Listing : Prompt
     private void NewItem(string lhItem)
     {
         // Adding the new items to the list of items.
-        _itemList[int.Parse(_lhNumberOfItems)] = lhItem;
+        _lhItemList[int.Parse(_lhNumberOfItems)] = lhItem;
         _lhNumberOfItems = (int.Parse(_lhNumberOfItems) + 1).ToString();
     }
 
