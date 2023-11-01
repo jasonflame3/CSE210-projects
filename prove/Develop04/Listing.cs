@@ -2,7 +2,7 @@ using System;
 
 /*
 W08 Prove: Developer 
-Activity Listing
+Activity Listing. The user picks a time and then writes a list of responses to a prompt.
 Lindsay Hurdman, Kamas Peterson 
 (c)2023
 */
@@ -22,7 +22,7 @@ class Listing : Prompt
         _lhItemList = new string[100];
     }
 
-    public void DoListing()
+    public void lhDoListing()
     {
         // Get Name, Description, and Prompt from Prompt Class.
         Console.WriteLine(lhName);
@@ -30,17 +30,13 @@ class Listing : Prompt
         Console.WriteLine(lhPrompt);
 
         // The spinner thingy.
-        Console.Write("+");
-        Thread.Sleep(500);
-
-        Console.Write("\b \b");
-        Console.Write("-");
+        jcAnimation();
 
         // Call Begin Listing.
-        BeginListing();
+        lhBeginListing();
     }
 
-    public void BeginListing()
+    public void lhBeginListing()
     {
         // Figure out the times.
         DateTime lhStartTime = DateTime.Now;
@@ -55,21 +51,21 @@ class Listing : Prompt
             string lhItem = Console.ReadLine();
 
             // Adding an item.
-            NewItem(lhItem);
+            lhNewItem(lhItem);
         }
 
         // Show number of Items.
-        DisplayNumberOfItems();
+        lhDisplayNumberOfItems();
     }
 
-    private void NewItem(string lhItem)
+    private void lhNewItem(string lhItem)
     {
         // Adding the new items to the list of items.
         _lhItemList[int.Parse(_lhNumberOfItems)] = lhItem;
         _lhNumberOfItems = (int.Parse(_lhNumberOfItems) + 1).ToString();
     }
 
-    private void DisplayNumberOfItems()
+    private void lhDisplayNumberOfItems()
     {
         // Printing the number of items.
         Console.WriteLine($"You've listed {_lhNumberOfItems} items:");
