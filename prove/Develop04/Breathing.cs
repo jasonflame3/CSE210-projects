@@ -9,13 +9,13 @@ class Breathing : Activity
 
     }
 
+    //returns a message that is printed by DoBreathing
     private string srDisplayMessage(bool srInhaling)
     {
+        string srDirection = "out";
+        if (srInhaling) {srDirection = "in";} //changes the message if you are inhaling or exhaling
 
-
-
-
-        return "";
+        return "Breathe " + srDirection + "...";
     }
 
     public void srDoBreathing()

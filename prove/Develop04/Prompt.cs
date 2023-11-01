@@ -1,5 +1,5 @@
 using System;
-using System.ComponentModel;
+
 /*
 W08 Prove: Developer 
 Provied each activity with a random prompt
@@ -15,9 +15,15 @@ class Prompt : Activity
         _kpPrompt = kpPrompt; 
     }
     
-    protected string kpGetPrompt ()
+    protected void kpGetPrompt ()
     {
         return _kpPrompt;
+    }
+
+    protected void lhGetDisplayMessage()
+    {
+        jcDisplayStartMessage();
+        jcDisplayEndMessage();
     }
    
 }
