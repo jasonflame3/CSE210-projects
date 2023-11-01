@@ -20,14 +20,26 @@ class Breathing : Activity
 
     public void srDoBreathing()
     {
+        jcDisplayStartMessage();
+
         Console.Clear();
         Console.WriteLine("Get Ready...\n");
+        jcAnimation();
+
+        DateTime srStart = DateTime.Now; //the time the activity starts
 
         float srRunTime = 0; //how long the activity has run for already
-        while (srRunTime < _srTime)
+        while (srRunTime < jcGetTime())
         {
-            
+            Console.Write(srDisplayMessage(true));
+            jcCountdown();
+            Console.Write(srDisplayMessage(false));
+            jcCountdown();
+
+            srRunTime = DateTime.Now.Second - srStart.Second;
         }
+
+        jcDisplayEndMessage();
     }
 
 }
