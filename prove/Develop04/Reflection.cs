@@ -10,7 +10,7 @@ Lindsay Hurdman, Kamas Peterson
 
 class Reflection : Prompt
 {
-    private List <string> _kpQuestions = new List<string>();
+    private List <string> _kpQuestions = new List<string>;
 
     public Reflection(string kpName, string kpDescription, float kpTime, string kpPrompt, List<string> kpQuestions) : base(kpName, kpDescription, kpTime, kpPrompt)
     {
