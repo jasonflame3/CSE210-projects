@@ -6,7 +6,7 @@ class Breathing : Activity
     //Constructors
     public Breathing(string srName, string srDescription, float srTime) : base(srName, srDescription, srTime)
     {
-
+        //Breathing doesn't have its own attributes, so there isn't anything in this part of the constructor
     }
 
     //returns a message that is printed by DoBreathing
@@ -20,11 +20,14 @@ class Breathing : Activity
 
     public void srDoBreathing()
     {
+        Console.Clear();
+        Console.WriteLine("Get Ready...\n");
 
-
-
-
-        
+        float srRunTime = 0; //how long the activity has run for already
+        while (srRunTime < _srTime)
+        {
+            
+        }
     }
 
 }
