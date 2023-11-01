@@ -24,7 +24,10 @@ class Listing : Prompt
 
     public void lhDoListing()
     {
-        // Get Name, Description, and Prompt from Prompt Class.
+        // Get Display Messages
+        lhGetDisplayMessage();
+        
+        // Get Prompt from Prompt Class.
         kpGetPrompt();
 
         // The spinner thingy.
