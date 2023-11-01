@@ -34,8 +34,9 @@ public void jcAnimation(){
 }
 
 protected void jcDisplayStartMessage(){
-
-
+    Console.WriteLine($"Welcome to the {_srName} Activity \n");
+    Console.WriteLine($"{_srDescription}\n");
+    jcSetTime();
 
 }
 
@@ -45,6 +46,14 @@ protected void jcDisplayEndMessage(){
 
 }
 
+protected void jcSetTime(){
+    Console.Write("How long in seconds would you like your session?");
+    _srTime = float.Parse(Console.ReadLine());
+}
+
+protected float jcGetTime(){
+    return _srTime;
+}
 public void jcPause(){
 // jcTime is measured in seconds
 int jcMilliseconds = (int)(_srTime * 1000);
