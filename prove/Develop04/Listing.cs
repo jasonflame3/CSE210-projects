@@ -21,6 +21,7 @@ class Listing : Prompt
         _lhNumberOfItems = "0";
         // List shouldn't need to hold more than 100 things?
         _lhItemList = new string[100];
+
     }
 
     public void lhDoListing()
@@ -45,8 +46,9 @@ class Listing : Prompt
     {
         // Figure out the times.
         DateTime lhStartTime = DateTime.Now;
-        DateTime  lhFutureTime = startTime.AddSecounds(lhTime);
+        DateTime  lhFutureTime = lhStartTime.AddSecounds(jcGetTime());
         Thread.Sleep(3000);
+        DateTime lhCurrentTime = DateTime.Now;
 
         // Do until specified time.
         while (lhCurrentTime < lhFutureTime)
