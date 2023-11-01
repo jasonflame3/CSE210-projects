@@ -17,17 +17,25 @@ class Reflection : Prompt
         _kpQuestions = kpQuestions;
     }
 
-    public kpDoReflection()
+    public void kpDoReflection()
     {
-        Console.WriteLine(kpPrompt);
+        //Displays the Starting Message 
+        jcDisplayStartMessage(); 
 
+        //Displays the end Message
+        jcDisplayEndMessage();
+
+        // Time display 
         jcAnimation(); 
 
-        jcPause
+        // Pauses for an amount of time
+        jcPause(); 
+
     }
 
     private List<string> kpGetQuesitons()
     {
+        //returns the questions from the list 
         return _kpQuestions;
     }
 }
