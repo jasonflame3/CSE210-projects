@@ -25,9 +25,7 @@ class Listing : Prompt
     public void lhDoListing()
     {
         // Get Name, Description, and Prompt from Prompt Class.
-        Console.WriteLine(lhName);
-        Console.WriteLine(lhDescription);
-        Console.WriteLine(lhPrompt);
+        kpGetPrompt();
 
         // The spinner thingy.
         jcAnimation();
