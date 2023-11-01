@@ -3,17 +3,17 @@ using System.Reflection;
 
 class Activity
 {
-private string srName;
-    private string srDescription;
-    private float srTime;
+    private string _srName;
+    private string _srDescription;
+    private float _srTime;
 
 
 
 public Activity(string jcName, string jcDecription, float jcTime)
 {
-    srName = jcName;
-    srDescription = jcDecription;
-    srTime =jcTime;
+    _srName = jcName;
+    _srDescription = jcDecription;
+    _srTime =jcTime;
 }
 
 public void jcAnimation(){
@@ -47,7 +47,7 @@ protected void jcDisplayEndMessage(){
 
 public void jcPause(){
 // jcTime is measured in seconds
-int jcMilliseconds = (int)(srTime * 1000);
+int jcMilliseconds = (int)(_srTime * 1000);
 Thread.Sleep(jcMilliseconds);
 }
 protected void jcCountdown(){
