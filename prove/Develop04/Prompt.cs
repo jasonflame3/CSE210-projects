@@ -3,7 +3,7 @@ using System.ComponentModel;
 /*
 W08 Prove: Developer 
 Provied each activity with a random prompt
-Lindsay Herdman, Kamas Peterson 
+Lindsay Hurdman, Kamas Peterson 
 (c)2023
 */
 
