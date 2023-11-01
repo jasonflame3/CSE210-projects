@@ -28,9 +28,6 @@ class Listing : Prompt
         // Display Start Message from Activities Class.
         jcDisplayStartMessage();
 
-        // Get Display Messages
-        lhGetDisplayMessage();
-
         // Get Prompt from Prompt Class.
         kpGetPrompt();
 
