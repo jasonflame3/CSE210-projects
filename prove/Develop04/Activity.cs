@@ -45,9 +45,9 @@ protected void jcDisplayEndMessage(){
 
 }
 
-public void jcPause(float jcTime){
+public void jcPause(){
 // jcTime is measured in seconds
-int jcMilliseconds = (int)(jcTime * 1000);
+int jcMilliseconds = (int)(srTime * 1000);
 Thread.Sleep(jcMilliseconds);
 }
 protected void jcCountdown(){
