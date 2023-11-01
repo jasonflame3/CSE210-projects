@@ -28,13 +28,7 @@ class Reflection : Prompt
         // Time display 
         jcAnimation(); 
 
-<<<<<<< HEAD
-        // Pauses for an amount of time
-        jcPause(); 
-
-=======
         jcPause();
->>>>>>> d70cf11f77bec3c283b2785e304025dea762c4ec
     }
 
     private List<string> kpGetQuesitons()

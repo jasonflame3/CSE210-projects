@@ -15,12 +15,12 @@ class Prompt : Activity
         _kpPrompt = kpPrompt; 
     }
     
-    protected kpGetPrompt ()
+    protected void kpGetPrompt ()
     {
         return _kpPrompt;
     }
 
-    protected lhGetDisplayMessage()
+    protected void lhGetDisplayMessage()
     {
         jcDisplayStartMessage();
         jcDisplayEndMessage();
