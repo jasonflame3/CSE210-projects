@@ -15,7 +15,7 @@ class Prompt : Activity
         _kpPrompt = kpPrompt; 
     }
     
-    protected void kpGetPrompt ()
+    protected string kpGetPrompt ()
     {
         return _kpPrompt;
     }
