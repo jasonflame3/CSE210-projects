@@ -29,7 +29,8 @@ class Listing : Prompt
         jcDisplayStartMessage();
 
         // Get Prompt from Prompt Class.
-        KpGetPrompt();
+        string prompt = KpGetPrompt();
+        Console.WriteLine(prompt);
 
         // The spinner thingy.
         jcAnimation();

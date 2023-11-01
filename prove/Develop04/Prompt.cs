@@ -10,7 +10,7 @@ Lindsay Hurdman, Kamas Peterson
 class Prompt : Activity
 {
     private readonly string _kpPrompt;
-    public Prompt(string kpName, string kpDescription, float kpTime, string kpPrompt) :base(kpName, kpDescription, kpTime)
+    public Prompt(string kpName, string kpDescription, float kpTime, string kpPrompt) : base(kpName, kpDescription, kpTime)
     {
         _kpPrompt = kpPrompt; 
     }
