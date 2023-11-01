@@ -1,5 +1,4 @@
 using System;
-using DateTime;
 
 /*
 W08 Prove: Developer 
@@ -46,14 +45,13 @@ class Listing : Prompt
     {
         // Figure out the times.
         DateTime lhStartTime = DateTime.Now;
-        DateTime  lhFutureTime = lhStartTime.AddSecounds(jcGetTime());
+        DateTime  lhFutureTime = lhStartTime.AddSeconds(jcGetTime());
         Thread.Sleep(3000);
         DateTime lhCurrentTime = DateTime.Now;
 
         // Do until specified time.
         while (lhCurrentTime < lhFutureTime)
         {
-            DateTime lhCurrentTime = DateTime.Now;
             Console.Write("Enter an item:");
             string lhItem = Console.ReadLine();
 
