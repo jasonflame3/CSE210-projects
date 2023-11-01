@@ -31,7 +31,7 @@ class Reflection : Prompt
         jcPause();
 
         // Gets the prompt from the class Prompt
-        kpGetPrompt();
+        KpGetPrompt();
     }
 
     private List<string> kpGetQuesitons()
