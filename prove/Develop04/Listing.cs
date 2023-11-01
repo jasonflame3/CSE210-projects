@@ -1,4 +1,5 @@
 using System;
+using DateTime;
 
 /*
 W08 Prove: Developer 
@@ -24,9 +25,12 @@ class Listing : Prompt
 
     public void lhDoListing()
     {
+        // Display Start Message from Activities Class.
+        jcDisplayStartMessage();
+
         // Get Display Messages
         lhGetDisplayMessage();
-        
+
         // Get Prompt from Prompt Class.
         kpGetPrompt();
 
@@ -35,6 +39,9 @@ class Listing : Prompt
 
         // Call Begin Listing.
         lhBeginListing();
+
+        // Display End Message from Activities Class.
+        jcDisplayEndMessage();
     }
 
     public void lhBeginListing()

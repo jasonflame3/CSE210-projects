@@ -19,11 +19,5 @@ class Prompt : Activity
     {
         return _kpPrompt;
     }
-
-    protected void lhGetDisplayMessage()
-    {
-        jcDisplayStartMessage();
-        jcDisplayEndMessage();
-    }
    
 }
