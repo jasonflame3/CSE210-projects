@@ -23,7 +23,7 @@ class Reflection : Prompt
 
         jcAnimation(); 
 
-        jcPause
+        jcPause();
     }
 
     private List<string> kpGetQuesitons()
