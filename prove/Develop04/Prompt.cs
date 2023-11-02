@@ -9,13 +9,13 @@ Lindsay Hurdman, Kamas Peterson
 
 class Prompt : Activity
 {
-    private string _kpPrompt;
-    public Prompt(string kpName, string kpDescription, float kpTime, string kpPrompt) :base(kpName, kpDescription, kpTime)
+    private readonly string _kpPrompt;
+    public Prompt(string kpName, string kpDescription, float kpTime, string kpPrompt) : base(kpName, kpDescription, kpTime)
     {
         _kpPrompt = kpPrompt; 
     }
     
-    protected string kpGetPrompt ()
+    protected string KpGetPrompt ()
     {
         return _kpPrompt;
     }

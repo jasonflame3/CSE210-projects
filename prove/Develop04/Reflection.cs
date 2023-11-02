@@ -33,13 +33,13 @@ class Reflection : Prompt
         // Gets the prompt from the class Prompt
         kpGetPrompt();
 
-        kpGetQuesiton()
+        kpGetQuesiton();
     }
 
     private string kpGetQuesiton()
     {
         //returns the questions from the list 
-        Random kpRanQuestion = new Random
-        kpRanQuestion = kpQuestions
+        Random kpRanQuestion = new Random;
+        kpRanQuestion = kpQuestions;
     }
 }

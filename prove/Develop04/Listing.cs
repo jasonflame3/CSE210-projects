@@ -11,7 +11,7 @@ Lindsay Hurdman, Kamas Peterson
 class Listing : Prompt
 {  
     private string _lhNumberOfItems;
-    private string[] _lhItemList;
+    private readonly string[] _lhItemList;
 
     // Constructor
     public Listing(string lhName, string lhDescription, float lhTime, string lhPrompt) : base(lhName, lhDescription, lhTime, lhPrompt)
@@ -23,25 +23,26 @@ class Listing : Prompt
 
     }
 
-    public void lhDoListing()
+    public void LhDoListing()
     {
         // Display Start Message from Activities Class.
         jcDisplayStartMessage();
 
         // Get Prompt from Prompt Class.
-        kpGetPrompt();
+        string prompt = KpGetPrompt();
+        Console.WriteLine(prompt);
 
         // The spinner thingy.
         jcAnimation();
 
         // Call Begin Listing.
-        lhBeginListing();
+        LhBeginListing();
 
         // Display End Message from Activities Class.
         jcDisplayEndMessage();
     }
 
-    public void lhBeginListing()
+    public void LhBeginListing()
     {
         // Figure out the times.
         DateTime lhStartTime = DateTime.Now;
@@ -56,21 +57,21 @@ class Listing : Prompt
             string lhItem = Console.ReadLine();
 
             // Adding an item.
-            lhNewItem(lhItem);
+            LhNewItem(lhItem);
         }
 
         // Show number of Items.
-        lhDisplayNumberOfItems();
+        LhDisplayNumberOfItems();
     }
 
-    private void lhNewItem(string lhItem)
+    private void LhNewItem(string lhItem)
     {
         // Adding the new items to the list of items.
         _lhItemList[int.Parse(_lhNumberOfItems)] = lhItem;
         _lhNumberOfItems = (int.Parse(_lhNumberOfItems) + 1).ToString();
     }
 
-    private void lhDisplayNumberOfItems()
+    private void LhDisplayNumberOfItems()
     {
         // Printing the number of items.
         Console.WriteLine($"You've listed {_lhNumberOfItems} items:");
