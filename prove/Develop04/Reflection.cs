@@ -39,7 +39,7 @@ class Reflection : Prompt
     private string kpGetQuesiton()
     {
         //returns the questions from the list 
-        Random kpRanQuestion = new Random;
+        Random kpRanQuestion = new Random();
         kpRanQuestion = kpQuestions;
     }
 }
