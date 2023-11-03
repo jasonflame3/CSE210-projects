@@ -25,9 +25,13 @@ public void jcAnimation(){
     for (int x = 1; x <= srTimes; x++) //do the animation
     {
         Console.Write(srBack + "-");
+        Thread.Sleep(250);
         Console.Write(srBack + "\\");
+        Thread.Sleep(250);
         Console.Write(srBack + "|");
+        Thread.Sleep(250);
         Console.Write(srBack + "/");
+        Thread.Sleep(250);
     }
 
     Console.WriteLine(""); //end the space for the animation
