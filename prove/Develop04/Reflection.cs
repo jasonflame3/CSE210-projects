@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 
 /*
 W08 Prove: Developer 
@@ -41,5 +42,8 @@ class Reflection : Prompt
         //returns the questions from the list 
         Random kpRanQuestion = new Random();
         kpRanQuestion = kpQuestions;
+
+        return kpGetQuesiton;
     }
+    
 }
