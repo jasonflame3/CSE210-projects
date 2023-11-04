@@ -45,9 +45,8 @@ protected void jcDisplayStartMessage(){
 }
 
 protected void jcDisplayEndMessage(){
-    
-
-
+    Console.WriteLine("Well Done! \n");
+    Console.WriteLine($"You have completed another {_srTime} seconds of the {_srName} activity.");
 }
 
 protected void jcSetTime(){
@@ -60,20 +59,14 @@ protected float jcGetTime(){
 }
 public void jcPause(){
 // jcTime is measured in seconds
-int jcMilliseconds = (int)(_srTime * 1000);
-Thread.Sleep(jcMilliseconds);
+    int jcMilliseconds = (int)(_srTime * 1000);
+    Thread.Sleep(jcMilliseconds);
 }
 protected void jcCountdown(){
-
-
-
+    for (int i = 3; i > 0; i--){
+        Console.Write($"{i}");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
 }
-
-
-
-
-
-
-
-
+}
 }
