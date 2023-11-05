@@ -43,7 +43,7 @@ class Breathing : Activity
             Console.WriteLine(srDisplayMessage(false));
             jcCountdown(3);
 
-            srRunTime = (DateTime.Now - srStart).Seconds;
+            srRunTime = ((DateTime.Now -srStart).Minutes *60 ) + (DateTime.Now - srStart).Seconds;
         }
 
         jcDisplayEndMessage();

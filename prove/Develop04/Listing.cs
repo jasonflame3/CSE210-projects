@@ -71,7 +71,7 @@ class Listing : Prompt
             // Adding an item.
             LhNewItem(lhItem);
 
-            srRunTime = (DateTime.Now - srStart).Seconds;
+            srRunTime = ((DateTime.Now -srStart).Minutes *60 ) + (DateTime.Now - srStart).Seconds;
         }
 
     }
