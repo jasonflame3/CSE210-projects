@@ -9,71 +9,64 @@ class Activity
 
 
 
-public Activity(string jcName, string jcDecription, float jcTime)
-{
-    _srName = jcName;
-    _srDescription = jcDecription;
-    _srTime =jcTime;
-}
-
-public void jcAnimation(){
-    int srTimes = 3; //Change this to increase or decrease the duration of the animation
-    string srBack = "\b \b"; //the backspace character
-
-    Console.WriteLine(""); //create a space for the animation to happen in
-
-    for (int x = 1; x <= srTimes; x++) //do the animation
+    public Activity(string jcName, string jcDecription, float jcTime)
     {
-        Console.Write(srBack + "-");
-        Thread.Sleep(250);
-        Console.Write(srBack + "\\");
-        Thread.Sleep(250);
-        Console.Write(srBack + "|");
-        Thread.Sleep(250);
-        Console.Write(srBack + "/");
-        Thread.Sleep(250);
+        _srName = jcName;
+        _srDescription = jcDecription;
+        _srTime =jcTime;
     }
 
-    Console.WriteLine(""); //end the space for the animation
-}
+    public void jcAnimation(int srTimes){
+        string srBack = "\b \b"; //the backspace character
 
-protected void jcDisplayStartMessage(){
-    Console.WriteLine($"Welcome to the {_srName} Activity \n");
-    Console.WriteLine($"{_srDescription}\n");
-    jcSetTime();
+        Console.WriteLine(""); //create a space for the animation to happen in
 
-}
+        for (int x = 1; x <= srTimes; x++) //do the animation
+        {
+            Console.Write(srBack + "-");
+            Thread.Sleep(250);
+            Console.Write(srBack + "\\");
+            Thread.Sleep(250);
+            Console.Write(srBack + "|");
+            Thread.Sleep(250);
+            Console.Write(srBack + "/");
+            Thread.Sleep(250);
+        }
 
-protected void jcDisplayEndMessage(){
-    
+        Console.WriteLine(""); //end the space for the animation
+    }
 
+    protected void jcDisplayStartMessage(){
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_srName} Activity \n");
+        Console.WriteLine($"{_srDescription}\n");
+        jcSetTime();
 
-}
+    }
 
-protected void jcSetTime(){
-    Console.Write("How long in seconds would you like your session?");
-    _srTime = float.Parse(Console.ReadLine());
-}
+    protected void jcDisplayEndMessage(){
+        Console.WriteLine("Well Done! \n");
+        Console.WriteLine($"You have completed another {_srTime} seconds of the {_srName} activity.");
+    }
 
-protected float jcGetTime(){
-    return _srTime;
-}
-public void jcPause(){
-// jcTime is measured in seconds
-int jcMilliseconds = (int)(_srTime * 1000);
-Thread.Sleep(jcMilliseconds);
-}
-protected void jcCountdown(){
+    protected void jcSetTime(){
+        Console.Write("How long, in seconds, would you like your session?");
+        _srTime = float.Parse(Console.ReadLine());
+    }
 
-
-
-}
-
-
-
-
-
-
-
-
+    protected float jcGetTime(){
+        return _srTime;
+    }
+    public void jcPause(int jcSec){
+    // jcTime is measured in seconds
+        int jcMilliseconds = jcSec * 1000;
+        Thread.Sleep(jcMilliseconds);
+    }
+    protected void jcCountdown(int i){
+        for (; i > 0; i--){
+            Console.Write($"{i}");
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+    }
 }
