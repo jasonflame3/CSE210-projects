@@ -3,7 +3,7 @@ using System;
 /*
 W08 Prove: Developer 
 Activity Listing. The user picks a time and then writes a list of responses to a prompt.
-Lindsay Hurdman, Kamas Peterson 
+Sean Reading, Jason Chandler, Lindsay Hurdman, Kamas Peterson 
 (c)2023
 */
 

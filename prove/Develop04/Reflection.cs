@@ -5,7 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 /*
 W08 Prove: Developer 
 Activity Reflection
-Lindsay Hurdman, Kamas Peterson 
+Sean Reading, Jason Chandler, Lindsay Hurdman, Kamas Peterson 
 (c)2023
 */
 

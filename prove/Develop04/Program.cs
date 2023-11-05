@@ -2,6 +2,13 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 
+/*
+W08 Prove: Developer 
+Breathing Activity
+Sean Reading, Jason Chandler, Lindsay Hurdman, Kamas Peterson 
+11/1/2023
+*/
+
 class Program
 {
     static void Main(string[] args)

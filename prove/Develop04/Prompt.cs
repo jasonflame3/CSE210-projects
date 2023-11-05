@@ -3,7 +3,7 @@ using System;
 /*
 W08 Prove: Developer 
 Provied each activity with a random prompt
-Lindsay Hurdman, Kamas Peterson 
+Sean Reading, Jason Chandler, Lindsay Hurdman, Kamas Peterson 
 (c)2023
 */
 

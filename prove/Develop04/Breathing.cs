@@ -1,10 +1,9 @@
 using System;
-
 /*
 W08 Prove: Developer 
 Breathing Activity
-Sean Reading
-11/1/2023
+Sean Reading, Jason Chandler, Lindsay Hurdman, Kamas Peterson 
+11/4/2023
 */
 
 class Breathing : Activity

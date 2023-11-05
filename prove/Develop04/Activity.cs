@@ -1,6 +1,11 @@
 using System;
 using System.Reflection;
-
+/*
+W08 Prove: Developer 
+Activity
+Sean Reading, Jason Chandler, Lindsay Hurdman, Kamas Peterson 
+11/4/2023
+*/
 class Activity
 {
     private string _srName;
