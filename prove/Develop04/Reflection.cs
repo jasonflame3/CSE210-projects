@@ -41,7 +41,7 @@ class Reflection : Prompt
     {
         //returns the questions from the list 
         Random kprand = new Random();
-        string kprandQuestion = this._kpQuestions[kprand.Next()];
+        string kprandQuestion = this._kpQuestions[kprand.Next(6)];
         Console.WriteLine(kprandQuestion);
         string kpuserentry = Console.ReadLine();
 
