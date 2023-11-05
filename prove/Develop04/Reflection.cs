@@ -48,15 +48,14 @@ class Reflection : Prompt
 
         jcDisplayEndMessage();
     }
+
     private string kpGetQuesiton()
     {
         //returns the questions from the list 
-        Random kprand = new Random();
-        string kprandQuestion = this._kpQuestions[kprand.Next(6)];
-        Console.WriteLine(kprandQuestion);
-        string kpuserentry = Console.ReadLine();
-
-        return kpGetQuesiton();
+        Random kpRand = new Random();
+        string kpRandQuestion = this._kpQuestions[kpRand.Next() % _kpQuestions.Count()];
+        return kpRandQuestion;
+        // string kpuserentry = Console.ReadLine();
     }
     
 }
