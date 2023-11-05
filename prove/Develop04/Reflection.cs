@@ -40,9 +40,9 @@ class Reflection : Prompt
     private string kpGetQuesiton()
     {
         //returns the questions from the list 
-        Random kprand = new Random();
-        string kprandQuestion = this._kpQuestions[kprand.Next()];
-        Console.WriteLine(kprandQuestion);
+        Random kpRand = new Random();
+        string kpRandQuestion = this._kpQuestions[kpRand.Next()];
+        Console.WriteLine(kpRandQuestion);
         string kpuserentry = Console.ReadLine();
 
         return kpGetQuesiton();
