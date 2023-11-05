@@ -16,8 +16,7 @@ class Activity
         _srTime =jcTime;
     }
 
-    public void jcAnimation(){
-        int srTimes = 3; //Change this to increase or decrease the duration of the animation
+    public void jcAnimation(int srTimes){
         string srBack = "\b \b"; //the backspace character
 
         Console.WriteLine(""); //create a space for the animation to happen in
@@ -38,6 +37,7 @@ class Activity
     }
 
     protected void jcDisplayStartMessage(){
+        Console.Clear();
         Console.WriteLine($"Welcome to the {_srName} Activity \n");
         Console.WriteLine($"{_srDescription}\n");
         jcSetTime();
@@ -57,13 +57,13 @@ class Activity
     protected float jcGetTime(){
         return _srTime;
     }
-    public void jcPause(){
+    public void jcPause(int jcSec){
     // jcTime is measured in seconds
-        int jcMilliseconds = (int)(_srTime * 1000);
+        int jcMilliseconds = jcSec * 1000;
         Thread.Sleep(jcMilliseconds);
     }
-    protected void jcCountdown(){
-        for (int i = 3; i > 0; i--){
+    protected void jcCountdown(int i){
+        for (; i > 0; i--){
             Console.Write($"{i}");
             Thread.Sleep(1000);
             Console.Write("\b \b");

@@ -33,10 +33,14 @@ class Listing : Prompt
         Console.WriteLine(prompt);
 
         // The spinner thingy.
-        jcAnimation();
+        jcAnimation(3);
 
         // Call Begin Listing.
         LhBeginListing();
+        
+        // Show number of Items.
+        LhDisplayNumberOfItems();
+        jcAnimation(3);
 
         // Display End Message from Activities Class.
         jcDisplayEndMessage();
@@ -44,24 +48,32 @@ class Listing : Prompt
 
     public void LhBeginListing()
     {
-        // Figure out the times.
-        DateTime lhStartTime = DateTime.Now;
-        DateTime  lhFutureTime = lhStartTime.AddSeconds(jcGetTime());
-        Thread.Sleep(3000);
-        DateTime lhCurrentTime = DateTime.Now;
+        // // Figure out the times.
+        // DateTime lhStartTime = DateTime.Now;
+        // DateTime  lhFutureTime = lhStartTime.AddSeconds(jcGetTime());
+        // Thread.Sleep(3000);
+        // DateTime lhCurrentTime = DateTime.Now;
 
-        // Do until specified time.
-        while (lhCurrentTime < lhFutureTime)
+        // // Do until specified time.
+        // while (lhCurrentTime < lhFutureTime)
+        // {
+            
+        // }
+
+        DateTime srStart = DateTime.Now; //the time the activity starts
+
+        float srRunTime = 0; //how long the activity has run for already
+        while (srRunTime < jcGetTime())
         {
             Console.Write("Enter an item:");
             string lhItem = Console.ReadLine();
 
             // Adding an item.
             LhNewItem(lhItem);
+
+            srRunTime = (DateTime.Now - srStart).Seconds;
         }
 
-        // Show number of Items.
-        LhDisplayNumberOfItems();
     }
 
     private void LhNewItem(string lhItem)
