@@ -49,10 +49,10 @@ class Program
                           "Who are some of your personal heroes?",
                         };
             if (type.ToUpper() == "R"){
-                jcRandPrompt = jcReflectionPrompts[jcRand.Next()];
+                jcRandPrompt = jcReflectionPrompts[jcRand.Next() % jcReflectionPrompts.Count()];
             }
             else if (type.ToUpper() == "L"){
-                jcRandPrompt = jcListingPrompts[jcRand.Next()];
+                jcRandPrompt = jcListingPrompts[jcRand.Next() % jcListingPrompts.Count()];
             }
             else {
                 Debug.Assert(false,"this function was called wrong");
@@ -63,10 +63,10 @@ class Program
 
 
         int jcGetUserInput(){
-            Console.Write("Select a choice from the menu");
-            int val = Console.Read();
+            Console.Write("Select a choice from the menu ");
+            int val = int.Parse(Console.ReadLine());
             // if val is between 1 and 4
-            if (1 <= val || val <= 4){
+            if (1 <= val && val <= 4){
                 return val;
             }
             else{
