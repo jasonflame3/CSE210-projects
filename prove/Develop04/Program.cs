@@ -103,3 +103,4 @@ class Program
 }
 // reference https://www.tutorialsteacher.com/csharp/csharp-list
 // https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.assert?view=net-7.0
+// https://learn.microsoft.com/en-us/dotnet/api/system.random?view=net-7.0
