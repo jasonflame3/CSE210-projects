@@ -12,7 +12,6 @@ Sean Reading
 class srEternal : Goal
 {
     //constructors
-    public srEternal() : base() {}
     public srEternal(string name, string description, int points) : base(name, "eternal", description, points, false) {}
 
     //I don't know what this is supposed to do for this class but it's in the plan, so it's here too
@@ -24,12 +23,12 @@ class srEternal : Goal
     //return the number of points this goal is worth
     public override int ReturnPoints()
     {
-        return _kpPoints;
+        return kpGetPoints();
     }
 
     //return a string containing the name and description of the goal
     public override string DisplayGoal()
     {
-        return "[ ]" + _kpName + " (" + _kpDescription + ")";
+        return "[ ]" + kpGetName() + " (" + kpGetDescription() + ")";
     }
 }
