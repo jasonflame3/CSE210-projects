@@ -32,6 +32,8 @@ abstract class Goal
 
     public  abstract int ReturnPoints ();
 
+    public abstract void Report ();
+
     protected string kpGetName ()
     {
         return _kpName;
