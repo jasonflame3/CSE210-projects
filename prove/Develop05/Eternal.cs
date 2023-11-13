@@ -15,7 +15,7 @@ class srEternal : Goal
     public srEternal() : base() {}
     public srEternal(string name, string description, int points) : base(name, "eternal", description, points, false) {}
 
-    //I don't know what this is supposed to do here but it's in the plan, so it's here too
+    //I don't know what this is supposed to do for this class but it's in the plan, so it's here too
     public override void finished()
     {
 
@@ -30,6 +30,6 @@ class srEternal : Goal
     //return a string containing the name and description of the goal
     public override string displayGoal()
     {
-        return "[ ]" + _kpName + "(" + _kpDescription + ")";
+        return "[ ]" + _kpName + " (" + _kpDescription + ")";
     }
 }
