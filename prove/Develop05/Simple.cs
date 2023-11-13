@@ -1,9 +1,10 @@
 using System;
 
-public class Simple : Goal 
+class Simple : Goal 
 {
-    public Simple () : base ()
+    public Simple (string kpName, string kptypeGoal, string kpDescription, int kpPoints, bool kpFinished) : base (kpName, kptypeGoal, kpDescription, kpPoints, kpFinished)
     {
+        
 
     }
     public override string kpFinished ()

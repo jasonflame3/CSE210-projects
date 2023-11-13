@@ -24,15 +24,15 @@ abstract class Goal
         _kpFinished = kpFinished; 
     }
 
-    public abstract bool Finished ();
+    public abstract bool kpFinished ();
     
 
-    public abstract string DisplayGoal ();
+    public abstract string kpDisplayGoal ();
    
 
-    public  abstract int ReturnPoints ();
+    public  abstract int kpReturnPoints ();
 
-    public abstract void Report ();
+    public abstract void kpReport ();
 
     protected string kpGetName ()
     {
