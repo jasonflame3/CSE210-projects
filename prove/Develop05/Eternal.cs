@@ -14,7 +14,7 @@ class srEternal : Goal
     //constructors
     public srEternal(string name, string description, int points) : base(name, "eternal", description, points, false) {}
 
-    //I don't know what this is supposed to do for this class but it's in the plan, so it's here too
+    //this is the goal that never ends; and it goes on and on my friends...
     public override bool Finished()
     {
         return false;
@@ -30,5 +30,11 @@ class srEternal : Goal
     public override string DisplayGoal()
     {
         return "[ ]" + kpGetName() + " (" + kpGetDescription() + ")";
+    }
+
+    //this does something
+    public override void Report()
+    {
+        
     }
 }
