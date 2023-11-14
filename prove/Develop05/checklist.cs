@@ -23,7 +23,14 @@ public Cheacklist(string jcName, string jcTypeGoal,string jcDescription, int jcP
     public override string kpDisplayGoal()
     {
         // this will return the goal as a string 
-        return "this isn't done yet";
+
+        if (kpGetFinished()){
+            return $"[x] {kpGetName()} ({kpGetDescription()}) -- {_jcCount}/{_jcFinish}";
+        }
+        else{
+            return $"[ ] {kpGetName()} ({kpGetDescription()}) -- {_jcCount}/{_jcFinish}";
+        }
+        
     }
     public override int kpReturnPoints()
     {
