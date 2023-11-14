@@ -55,4 +55,8 @@ abstract class Goal
         return _kpFinished;
     }
     
+    protected void kpSetFinished (bool jcFinish)
+    {
+        _kpFinished = jcFinish;
+    }
 }
