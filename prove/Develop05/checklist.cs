@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Reflection;
 
 class Cheacklist : Goal
 {
@@ -15,8 +16,13 @@ public Cheacklist(string jcName, string jcTypeGoal,string jcDescription, int jcP
 
     public override bool kpFinished(){
         // checks if the goal is done.
-
+        Debug.Assert(_jcCount <= _jcFinish);
+        if((_jcCount == _jcFinish) && kpGetFinished()){
+            return true;
+        }
+        else{
         return false;
+        }
     }
     public override void kpReport()
     {
@@ -42,7 +48,16 @@ public Cheacklist(string jcName, string jcTypeGoal,string jcDescription, int jcP
     public override int kpReturnPoints()
     {
         // this calculates how many points one gets if they complete the goal. 
-        Console.WriteLine("this is not done yet");
-        return 0;
+        int tally = 0;
+        Debug.Assert(_jcCount <= _jcFinish);
+
+        if (_jcCount == _jcFinish){
+            tally += _jcBonusPoints + kpGetPoints();
+        }
+        else{
+            tally += kpGetPoints();
+        }
+
+        return tally;
     }
 }
