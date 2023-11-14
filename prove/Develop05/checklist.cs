@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 class Cheacklist : Goal
 {
 private int _jcCount;
@@ -13,12 +15,17 @@ public Cheacklist(string jcName, string jcTypeGoal,string jcDescription, int jcP
 
     public override bool kpFinished(){
         // checks if the goal is done.
+
         return false;
     }
     public override void kpReport()
     {
         // this is updates the goal everytime it gets completed
-        Console.WriteLine("this is not done yet");
+        Debug.Assert(kpGetFinished() == false);
+        _jcCount += 1;
+        if (_jcCount == _jcFinish){
+            jcSetFinished(true);
+        }
     }
     public override string kpDisplayGoal()
     {
