@@ -19,6 +19,7 @@ class Program
 
         string GetFileName()
         {
+            // Get file name from the user.
             Console.WriteLine("What is the file name?");
             string lhFileName = Console.ReadLine();
             return lhFileName;
@@ -28,11 +29,14 @@ class Program
         {
             Console.Write("Select a choice from the menu ");
             int val = int.Parse(Console.ReadLine());
-            // if val is between 1 and 6
-            if (1 <= val && val <= maxValue){
+            // If val is between 1 and the maxValue
+            if (1 <= val && val <= maxValue)
+            {
                 return val;
             }
-            else{
+            // If val is outside of range then call method again.
+            else
+            {
                 return GetUserInput(maxValue);
             }
         }
@@ -65,17 +69,18 @@ class Program
         void Save(string lhSaveFileName)
         {
             using (StreamWriter outputFile = new(lhSaveFileName))
-        {
-            foreach(Goal goal in lhGoals)
             {
-                outputFile.WriteLine($"{goal}");
+                foreach(Goal goal in lhGoals)
+                {
+                    outputFile.WriteLine($"{goal}");
+                }
             }
-        }
         }
 
         static void Load(string lhLoadFileName)
      {
-        try{
+        try
+        {
             string[] lines = File.ReadAllLines(lhLoadFileName);
             foreach (string line in lines)
             {
@@ -83,9 +88,10 @@ class Program
             }
             Console.WriteLine("load in file...\n");
         }
+        // If the file is not found.
         catch (FileNotFoundException)
         {
-            Console.WriteLine("Your file was not found \n");
+            Console.WriteLine($"{lhLoadFileName} was not found \n");
         }
     }
 
@@ -103,50 +109,50 @@ class Program
             switch (lhChoice)
             {
                 case 1:
-                    // Create New Goal
+                    // Create New Goal.
                     CreateNewGoal();
                     int lhAnotherChoice = GetUserInput(3);
                     switch(lhAnotherChoice)
                     {
                         case 1:
-                            // simple goals
+                            // Simple goals.
                             Simple simple = new("Simple Goal", "Simple", "description", 0, false);
                             break;
                         case 2:
-                            // eternal goals
+                            // Eternal goals.
                             srEternal eternal = new("Eternal Goal", "description", 0);
                             break;
                         case 3:
-                            // checklist goals
+                            // Checklist goals.
                             Cheacklist checklist = new("Checklist Goal", "Checklist", "description", 0, false, 0, 0, 0);
                             break;
                     }
                     break;
 
                 case 2:
-                    // Display Goals
+                    // Display Goals.
                     DisplayGoals();
                     break;
 
                 case 3:
-                    // Save Goals
+                    // Save Goals.
                     string lhSaveFileName = GetFileName();
                     Save(lhSaveFileName);
                     break;
 
                 case 4:
-                    // Load Goals
+                    // Load Goals.
                     string lhLoadFileName = GetFileName();
                     Load(lhLoadFileName);
                     break;
 
                 case 5:
-                    // Record Events
+                    // Record Events.
                     Report();
                     break;
 
                 case 6:
-                    // Quite
+                    // Quite.
                     lhDone = true;
                     break;
             }
