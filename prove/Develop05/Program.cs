@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Net.Http.Headers;
 
 /*
 W09 Prove: Developer 
@@ -11,7 +13,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Goal> lhGoals = new List<Goal>();
+        List<Goal> lhGoals = new();
 
         //int lhTotalScore = 0;
 
@@ -60,55 +62,94 @@ class Program
 
         }
 
-        static void Save(string lhSaveFileName)
+        void Save(string lhSaveFileName)
         {
-
+            using (StreamWriter outputFile = new(lhSaveFileName))
+        {
+            foreach(Goal goal in lhGoals)
+            {
+                outputFile.WriteLine($"{goal}");
+            }
+        }
         }
 
         static void Load(string lhLoadFileName)
-        {
-
+     {
+        try{
+            string[] lines = File.ReadAllLines(lhLoadFileName);
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split("~~");
+            }
+            Console.WriteLine("load in file...\n");
         }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("Your file was not found \n");
+        }
+    }
 
         static void Report()
         {
 
         }
 
-        bool done = false;
+        bool lhDone = false;
 
-        while (!done)
+        while (!lhDone)
         {
             DisplayMenu();
-            int choice = GetUserInput(6);
-            switch (choice){
+            int lhChoice = GetUserInput(6);
+            switch (lhChoice)
+            {
                 case 1:
+                    // Create New Goal
                     CreateNewGoal();
-                    int anotherChoice = GetUserInput(4);
+                    int lhAnotherChoice = GetUserInput(3);
+                    switch(lhAnotherChoice)
+                    {
+                        case 1:
+                            // simple goals
+                            Simple simple = new("Simple Goal", "Simple", "description", 0, false);
+                            break;
+                        case 2:
+                            // eternal goals
+                            srEternal eternal = new("Eternal Goal", "description", 0);
+                            break;
+                        case 3:
+                            // checklist goals
+                            Cheacklist checklist = new("Checklist Goal", "Checklist", "description", 0, false, 0, 0, 0);
+                            break;
+                    }
                     break;
+
                 case 2:
+                    // Display Goals
                     DisplayGoals();
                     break;
+
                 case 3:
+                    // Save Goals
                     string lhSaveFileName = GetFileName();
                     Save(lhSaveFileName);
                     break;
+
                 case 4:
+                    // Load Goals
                     string lhLoadFileName = GetFileName();
                     Load(lhLoadFileName);
                     break;
+
                 case 5:
+                    // Record Events
                     Report();
                     break;
-                case 6:
-                    done = true;
-                    break;
 
+                case 6:
+                    // Quite
+                    lhDone = true;
+                    break;
             }
         }
-   
-
     }
-
-
 }
