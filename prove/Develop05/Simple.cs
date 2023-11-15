@@ -16,16 +16,19 @@ class Simple : Goal
 
     public override int kpReturnPoints()
     {
-
+        return kpGetPoints();
     }
 
     public override string kpDisplayGoal()
     {
         if (kpFinished())
         {
-            return $"[x] {kpDescription} "; 
+            return $"[x] {kpGetName()} ({kpGetDescription()}) "; 
         }
-        return 
+        else 
+        {
+            return $"[ ] {kpGetName()} ({kpGetDescription()}"; 
+        }
     }
 
     public override void kpReport()
