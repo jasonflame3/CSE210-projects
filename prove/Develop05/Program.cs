@@ -27,7 +27,6 @@ class Program
 
         int GetUserInput(int maxValue)
         {
-            Console.Write("Select a choice from the menu ");
             int val = int.Parse(Console.ReadLine());
             // If val is between 1 and the maxValue
             if (1 <= val && val <= maxValue)
@@ -51,6 +50,7 @@ class Program
             Console.WriteLine("4. Load Goals");
             Console.WriteLine("5. Record Events");
             Console.WriteLine("6. Quite");
+            Console.WriteLine("Pick an option from the menu");
         }
 
         void CreateNewGoal()
@@ -59,6 +59,36 @@ class Program
             Console.WriteLine("1. Simple Goal");
             Console.WriteLine("2. Eternal Goal");
             Console.WriteLine("3. Checklist");
+            Console.WriteLine("Pick a type of Goal.");
+            int lhAnotherChoice = GetUserInput(3);
+            Console.WriteLine("Name of Goal:");
+            string lhNameOfGoal = Console.ReadLine();
+            Console.WriteLine("Description of Goal");
+            string lhDescription = Console.ReadLine();
+            Console.WriteLine("Number of Points");
+            string lhUserInputPoints = Console.ReadLine();
+            int lhPoints = int.Parse(lhUserInputPoints);
+            switch(lhAnotherChoice)
+            {
+                case 1:
+                    // Simple goals.
+                    Simple simple = new(lhNameOfGoal, lhDescription, lhPoints, false);
+                    break;
+                case 2:
+                    // Eternal goals.
+                    srEternal eternal = new("Eternal Goal", lhDescription, lhPoints);
+                    break;
+                case 3:
+                    // Checklist goals.
+                    Console.WriteLine("How many times do you want to complete this? ");
+                    string lhUserInputFinish = Console.ReadLine();
+                    int lhFinish = int.Parse(lhUserInputFinish);
+                    Console.WriteLine("How many bonus points?");
+                    string lhUserInputBonusPoints = Console.ReadLine();
+                    int lhBonusPoints = int.Parse(lhUserInputBonusPoints);
+                    Cheacklist checklist = new(lhNameOfGoal, lhDescription, lhPoints, false, 0, lhFinish, lhBonusPoints);
+                    break;
+            }
         }
 
         static void DisplayGoals()
@@ -95,9 +125,12 @@ class Program
         }
     }
 
-        static void Report()
+        void Report()
         {
-
+            DisplayGoals();
+            Console.WriteLine("Which goal would you like to check off? ");
+            GetUserInput(8);
+            
         }
 
         bool lhDone = false;
@@ -111,22 +144,7 @@ class Program
                 case 1:
                     // Create New Goal.
                     CreateNewGoal();
-                    int lhAnotherChoice = GetUserInput(3);
-                    switch(lhAnotherChoice)
-                    {
-                        case 1:
-                            // Simple goals.
-                            Simple simple = new("Simple Goal", "Simple", "description", 0, false);
-                            break;
-                        case 2:
-                            // Eternal goals.
-                            srEternal eternal = new("Eternal Goal", "description", 0);
-                            break;
-                        case 3:
-                            // Checklist goals.
-                            Cheacklist checklist = new("Checklist Goal", "Checklist", "description", 0, false, 0, 0, 0);
-                            break;
-                    }
+
                     break;
 
                 case 2:
