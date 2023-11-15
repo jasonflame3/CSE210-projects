@@ -18,6 +18,7 @@ class Program
         //int lhTotalScore = 0;
 
         string GetFileName()
+        // DONE!
         {
             // Get file name from the user.
             Console.WriteLine("What is the file name?");
@@ -26,6 +27,7 @@ class Program
         }
 
         int GetUserInput(int maxValue)
+        // DONE!
         {
             int val = int.Parse(Console.ReadLine());
             // If val is between 1 and the maxValue
@@ -41,6 +43,7 @@ class Program
         }
 
         void DisplayMenu()
+        // DONE!
         {
             Console.Clear();
             Console.WriteLine("Menu Options:");
@@ -50,26 +53,27 @@ class Program
             Console.WriteLine("4. Load Goals");
             Console.WriteLine("5. Record Events");
             Console.WriteLine("6. Quite");
-            Console.WriteLine("Pick an option from the menu");
+            Console.Write("Pick an option from the menu: ");
         }
 
         void CreateNewGoal()
+        // DONE!
         {
-            Console.WriteLine("The Types of Goals are: ");
+            Console.WriteLine("\nThe Types of Goals are: ");
             Console.WriteLine("1. Simple Goal");
             Console.WriteLine("2. Eternal Goal");
             Console.WriteLine("3. Checklist");
-            Console.WriteLine("Pick a type of Goal.");
+            Console.Write("Pick a type of Goal: ");
 
             int lhAnotherChoice = GetUserInput(3);
 
-            Console.WriteLine("Name of Goal:");
+            Console.Write("\nName of Goal: ");
             string lhNameOfGoal = Console.ReadLine();
 
-            Console.WriteLine("Description of Goal");
+            Console.Write("Description of Goal: ");
             string lhDescription = Console.ReadLine();
 
-            Console.WriteLine("Number of Points");
+            Console.Write("Number of Points: ");
             string lhUserInputPoints = Console.ReadLine();
             int lhPoints = int.Parse(lhUserInputPoints);
 
@@ -99,11 +103,13 @@ class Program
         }
 
         static void DisplayGoals()
+        // NOT DONE!
         {
-
+            
         }
 
         void Save(string lhSaveFileName)
+        // NOT DONE!
         {
             using (StreamWriter outputFile = new(lhSaveFileName))
             {
@@ -115,24 +121,26 @@ class Program
         }
 
         static void Load(string lhLoadFileName)
-     {
-        try
+        // NOT DONE!
         {
-            string[] lines = File.ReadAllLines(lhLoadFileName);
-            foreach (string line in lines)
+            try
             {
-                string[] parts = line.Split("~~");
+                string[] lines = File.ReadAllLines(lhLoadFileName);
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split("~~");
+                }
+                Console.WriteLine("load in file...\n");
             }
-            Console.WriteLine("load in file...\n");
+            // If the file is not found.
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine($"{lhLoadFileName} was not found \n");
+            }
         }
-        // If the file is not found.
-        catch (FileNotFoundException)
-        {
-            Console.WriteLine($"{lhLoadFileName} was not found \n");
-        }
-    }
 
         void Report()
+        // NOT DONE!
         {
             DisplayGoals();
             Console.WriteLine("Which goal would you like to check off? ");
@@ -140,6 +148,7 @@ class Program
             
         }
 
+        // DONE!
         bool lhDone = false;
 
         while (!lhDone)
