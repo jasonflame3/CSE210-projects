@@ -16,7 +16,7 @@ class Simple : Goal
 
     public override int kpReturnPoints()
     {
-
+        return 0;
     }
 
     public override string kpDisplayGoal()
