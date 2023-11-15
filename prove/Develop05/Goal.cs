@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 /*
 W10 Prove: Developer
 This programs purpose is to help the user to set goals whether they are simple, eternal, or complex
-Kamas Peterson 
+Kamas Peterson, Jason Chandler, Sean Reading, Lindsay Hurdman 
 (c) 2023
 */
 
@@ -17,6 +17,7 @@ abstract class Goal
     private int _kpPoints; 
     private bool _kpFinished; 
 
+    
     protected Goal (string kpName, string kptypeGoal, string kpDescription, int kpPoints, bool kpFinished)
     {
         _kpName = kpName;
@@ -41,27 +42,33 @@ abstract class Goal
 
     protected string kpGetName ()
     {
+        // returns kpName so that all the other classes can use it.
         return _kpName;
     }
     protected string kpGettypeGoal ()
     {
+        // returns kptypeGoal so that all other classes can use it.
         return _kptypeGoal;
     }
     protected string kpGetDescription ()
     {
+        // returns kpDescription so that all other classes can use it.
         return _kpDescription;
     }
     protected int kpGetPoints ()
     {
+        // returns kpPoints so that all other classes can use it. 
         return _kpPoints;
     }
     protected bool kpGetFinished ()
     {
+        //returns kpFinished so that all other classes can use it.
         return _kpFinished;
     }
     
     protected void jcSetFinished (bool jcFinish)
     {
+        // Allows child class to set the finished. 
         _kpFinished = jcFinish;
     }
 }
