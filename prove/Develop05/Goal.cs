@@ -4,7 +4,9 @@ using System.Security.Cryptography;
 
 /*
 W10 Prove: Developer
-
+This programs purpose is to help the user to set goals whether they are simple, eternal, or complex
+Kamas Peterson 
+(c) 2023
 */
 
 abstract class Goal 
@@ -25,14 +27,17 @@ abstract class Goal
     }
 
     public abstract bool kpFinished ();
+    // When the user has completed their goal
     
 
     public abstract string kpDisplayGoal ();
-   
+   // Displays the users goal or goals
 
     public  abstract int kpReturnPoints ();
+    //returns the point for the goal that has been completed
 
     public abstract void kpReport ();
+    // Reports how many points the user has.
 
     protected string kpGetName ()
     {
