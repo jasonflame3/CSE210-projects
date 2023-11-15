@@ -60,14 +60,19 @@ class Program
             Console.WriteLine("2. Eternal Goal");
             Console.WriteLine("3. Checklist");
             Console.WriteLine("Pick a type of Goal.");
+
             int lhAnotherChoice = GetUserInput(3);
+
             Console.WriteLine("Name of Goal:");
             string lhNameOfGoal = Console.ReadLine();
+
             Console.WriteLine("Description of Goal");
             string lhDescription = Console.ReadLine();
+
             Console.WriteLine("Number of Points");
             string lhUserInputPoints = Console.ReadLine();
             int lhPoints = int.Parse(lhUserInputPoints);
+
             switch(lhAnotherChoice)
             {
                 case 1:
@@ -76,16 +81,18 @@ class Program
                     break;
                 case 2:
                     // Eternal goals.
-                    srEternal eternal = new("Eternal Goal", lhDescription, lhPoints);
+                    srEternal eternal = new(lhNameOfGoal, lhDescription, lhPoints);
                     break;
                 case 3:
                     // Checklist goals.
                     Console.WriteLine("How many times do you want to complete this? ");
                     string lhUserInputFinish = Console.ReadLine();
                     int lhFinish = int.Parse(lhUserInputFinish);
+
                     Console.WriteLine("How many bonus points?");
                     string lhUserInputBonusPoints = Console.ReadLine();
                     int lhBonusPoints = int.Parse(lhUserInputBonusPoints);
+
                     Cheacklist checklist = new(lhNameOfGoal, lhDescription, lhPoints, false, 0, lhFinish, lhBonusPoints);
                     break;
             }
@@ -144,7 +151,6 @@ class Program
                 case 1:
                     // Create New Goal.
                     CreateNewGoal();
-
                     break;
 
                 case 2:
