@@ -12,7 +12,7 @@ Sean Reading
 class srEternal : Goal
 {
     //constructors
-    public srEternal(string name, string description, int points) : base(name, "eternal", description, points, false) {}
+    public srEternal(string name, string description, int points) : base(name, "Eternal", description, points, false) {}
 
     //this is the goal that never ends; and it goes on and on my friends...
     public override bool kpFinished()
