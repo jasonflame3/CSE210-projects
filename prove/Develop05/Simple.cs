@@ -1,9 +1,15 @@
 using System;
-using System.Text.Json.Nodes;
+
+/*
+W10 Prove: Developer 
+The class is for simple everyday goals that can checked off right away. 
+Kamas Peterson, Jason 
+(c) 2023 
+*/
 
 class Simple : Goal 
 {
-    public Simple (string kpName, string kptypeGoal, string kpDescription, int kpPoints, bool kpFinished) : base (kpName, kptypeGoal, kpDescription, kpPoints, kpFinished)
+    public Simple (string kpName, string kpDescription, int kpPoints, bool kpFinished) : base (kpName, "Simple", kpDescription, kpPoints, kpFinished)
     {
 
 
