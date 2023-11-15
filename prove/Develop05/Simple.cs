@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json.Nodes;
 
 class Simple : Goal 
 {
@@ -7,30 +8,29 @@ class Simple : Goal
 
 
     }
-    public override string kpFinished ()
+    public override bool kpFinished ()
     {
-        kpuserInput = ""; 
-
-        if (kpuserInput != true)
-        {
-            kpuserInput = false; 
-        }
+        return kpGetFinished(); 
 
     }
 
-    public override int kpReturnPoints ()
+    public override int kpReturnPoints()
     {
-
+        return 0;
     }
 
     public override string kpDisplayGoal()
     {
-        Console.WriteLine($"{kpName}'s goal is to {}" )
+        if (kpFinished())
+        {
+            return $"[x] {kpDescription} "; 
+        }
+        return 
     }
 
     public override void kpReport()
     {
-        
+      jcSetFinished(true);   
     }
 
 }
