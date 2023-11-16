@@ -15,8 +15,6 @@ class Program
     {
         List<Goal> lhGoals = new();
 
-        //int lhTotalScore = 0;
-
         string GetFileName()
         // DONE!
         {
@@ -82,60 +80,115 @@ class Program
                 case 1:
                     // Simple goals.
                     Simple simple = new(lhNameOfGoal, lhDescription, lhPoints, false);
+                    lhGoals.Add(simple);
                     break;
+
                 case 2:
                     // Eternal goals.
                     srEternal eternal = new(lhNameOfGoal, lhDescription, lhPoints);
+                    lhGoals.Add(eternal);
                     break;
+                    
                 case 3:
                     // Checklist goals.
-                    Console.WriteLine("How many times do you want to complete this? ");
+                    Console.Write("How many times do you want to complete this? ");
                     string lhUserInputFinish = Console.ReadLine();
                     int lhFinish = int.Parse(lhUserInputFinish);
 
-                    Console.WriteLine("How many bonus points?");
+                    Console.Write("How many bonus points? ");
                     string lhUserInputBonusPoints = Console.ReadLine();
                     int lhBonusPoints = int.Parse(lhUserInputBonusPoints);
 
                     Cheacklist checklist = new(lhNameOfGoal, lhDescription, lhPoints, false, 0, lhFinish, lhBonusPoints);
+                    lhGoals.Add(checklist);
                     break;
             }
         }
 
-        static void DisplayGoals()
+        void DisplayGoals()
         // NOT DONE!
         {
-            
-        }
-
-        void Save(string lhSaveFileName)
-        // NOT DONE!
-        {
-            using (StreamWriter outputFile = new(lhSaveFileName))
+            Console.WriteLine("List of Goals: ");
+            int count = 1;
+            foreach (Goal goal in lhGoals)
             {
-                foreach(Goal goal in lhGoals)
-                {
-                    outputFile.WriteLine($"{goal}");
-                }
+                string countString = count.ToString();
+                Console.WriteLine(countString);
+                Console.WriteLine(goal.kpDisplayGoal());
+                count += 1;
             }
         }
 
-        static void Load(string lhLoadFileName)
-        // NOT DONE!
+        void Save(string lhSaveFileName)
         {
             try
             {
+                using (StreamWriter outputFile = new(lhSaveFileName))
+                {
+                    foreach (Goal goal in lhGoals)
+                    {
+                        // Save each goal in the format: "Type~~Name~~Description~~Points~~Finished"
+                        outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}");
+                    }
+                }
+
+                Console.WriteLine($"Goals saved in {lhSaveFileName}.\n");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving goals: {ex.Message}\n");
+            }
+        }
+
+        void Load(string lhLoadFileName)
+        {
+            try
+            {
+                // Clear existing goals before loading
+                lhGoals.Clear();
+
                 string[] lines = File.ReadAllLines(lhLoadFileName);
                 foreach (string line in lines)
                 {
                     string[] parts = line.Split("~~");
+
+                    // Parse values from the line
+                    string type = parts[0];
+                    string name = parts[1];
+                    string description = parts[2];
+                    int points = int.Parse(parts[3]);
+                    bool finished = bool.Parse(parts[4]);
+
+                    // Create a new goal based on the type
+                    Goal loadedGoal;
+                    switch (type)
+                    {
+                        case "Simple":
+                            loadedGoal = new Simple(name, description, points, finished);
+                            break;
+                        case "srEternal":
+                            loadedGoal = new srEternal(name, description, points);
+                            break;
+                        case "Cheacklist":
+                            int count = int.Parse(parts[5]);
+                            int finish = int.Parse(parts[6]);
+                            int bonusPoints = int.Parse(parts[7]);
+                            loadedGoal = new Cheacklist(name, description, points, finished, count, finish, bonusPoints);
+                            break;
+                        default:
+                            Console.WriteLine($"Unknown goal type: {type}");
+                            continue;
+                    }
+
+                    // Add the loaded goal to the list
+                    lhGoals.Add(loadedGoal);
                 }
-                Console.WriteLine("load in file...\n");
+
+                Console.WriteLine("Goals loaded successfully.\n");
             }
-            // If the file is not found.
-            catch (FileNotFoundException)
+            catch (Exception ex)
             {
-                Console.WriteLine($"{lhLoadFileName} was not found \n");
+                Console.WriteLine($"Error loading goals: {ex.Message}\n");
             }
         }
 
@@ -144,7 +197,12 @@ class Program
         {
             DisplayGoals();
             Console.WriteLine("Which goal would you like to check off? ");
-            GetUserInput(8);
+            int goalIndex = GetUserInput(lhGoals.Count) - 1;
+            Goal selectedGoal = lhGoals[goalIndex];
+
+            selectedGoal.kpReport();
+
+            Console.WriteLine("Event recorded.\n");
             
         }
 
@@ -155,6 +213,7 @@ class Program
         {
             DisplayMenu();
             int lhChoice = GetUserInput(6);
+            Console.WriteLine("Entering loop");
             switch (lhChoice)
             {
                 case 1:
@@ -163,6 +222,7 @@ class Program
                     break;
 
                 case 2:
+                    Console.WriteLine("Entering Case 2");
                     // Display Goals.
                     DisplayGoals();
                     break;
