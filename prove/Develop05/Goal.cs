@@ -40,7 +40,7 @@ abstract class Goal
     public abstract void kpReport ();
     // Reports how many points the user has.
 
-    protected string kpGetName ()
+    public string kpGetName ()
     {
         // returns kpName so that all the other classes can use it.
         return _kpName;
@@ -50,17 +50,17 @@ abstract class Goal
         // returns kptypeGoal so that all other classes can use it.
         return _kptypeGoal;
     }
-    protected string kpGetDescription ()
+    public string kpGetDescription ()
     {
         // returns kpDescription so that all other classes can use it.
         return _kpDescription;
     }
-    protected int kpGetPoints ()
+    public int kpGetPoints ()
     {
         // returns kpPoints so that all other classes can use it. 
         return _kpPoints;
     }
-    protected bool kpGetFinished ()
+    public bool kpGetFinished ()
     {
         //returns kpFinished so that all other classes can use it.
         return _kpFinished;
