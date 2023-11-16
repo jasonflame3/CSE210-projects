@@ -25,20 +25,32 @@ class Program
             return lhFileName;
         }
 
+        // int GetUserInput(int maxValue)
+        // // DONE!
+        // {
+        //     int val = int.Parse(Console.ReadLine());
+        //     // If val is between 1 and the maxValue.
+        //     if (1 <= val && val <= maxValue)
+        //     {
+        //         return val;
+        //     }
+        //     // If val is outside of range then call method again.
+        //     else
+        //     {
+        //         return GetUserInput(maxValue);
+        //     }
+        // }
+
+
         int GetUserInput(int maxValue)
-        // DONE!
         {
-            int val = int.Parse(Console.ReadLine());
-            // If val is between 1 and the maxValue.
-            if (1 <= val && val <= maxValue)
+            int val;
+            while (!int.TryParse(Console.ReadLine(), out val) || val < 1 || val > maxValue)
             {
-                return val;
+                Console.WriteLine($"Please enter a valid input between 1 and {maxValue}: ");
             }
-            // If val is outside of range then call method again.
-            else
-            {
-                return GetUserInput(maxValue);
-            }
+
+            return val;
         }
 
         void DisplayMenu()
@@ -100,7 +112,7 @@ class Program
                     string lhUserInputBonusPoints = Console.ReadLine();
                     int lhBonusPoints = int.Parse(lhUserInputBonusPoints);
 
-                    Cheacklist checklist = new(lhNameOfGoal, lhDescription, lhPoints, false, 0, lhFinish, lhBonusPoints);
+                    Checklist checklist = new(lhNameOfGoal, lhDescription, lhPoints, false, 0, lhFinish, lhBonusPoints);
                     lhGoals.Add(checklist);
                     break;
             }
@@ -178,7 +190,7 @@ class Program
                             int count = int.Parse(parts[5]);
                             int finish = int.Parse(parts[6]);
                             int bonusPoints = int.Parse(parts[7]);
-                            loadedGoal = new Cheacklist(name, description, points, finished, count, finish, bonusPoints);
+                            loadedGoal = new Checklist(name, description, points, finished, count, finish, bonusPoints);
                             break;
                         default:
                             // Shouldn't ever happen, but just in case.

@@ -1,13 +1,13 @@
 using System.Diagnostics;
 using System.Reflection;
 
-class Cheacklist : Goal
+class Checklist : Goal
 {
 private int _jcCount;
 private int _jcFinish;
 private int _jcBonusPoints;
 
-public Cheacklist(string jcName,string jcDescription, int jcPoints, bool jcFinished,
+public Checklist(string jcName,string jcDescription, int jcPoints, bool jcFinished,
  int jcCount, int jcFinish, int jcBonusPoints) : base(jcName,"Checklist",jcDescription,jcPoints,jcFinished){
     _jcCount = jcCount;
     _jcFinish = jcFinish;
