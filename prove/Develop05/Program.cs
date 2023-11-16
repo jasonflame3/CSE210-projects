@@ -13,6 +13,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        // List that holds the goals.
         List<Goal> lhGoals = new();
 
         string GetFileName()
@@ -28,7 +29,7 @@ class Program
         // DONE!
         {
             int val = int.Parse(Console.ReadLine());
-            // If val is between 1 and the maxValue
+            // If val is between 1 and the maxValue.
             if (1 <= val && val <= maxValue)
             {
                 return val;
@@ -106,7 +107,7 @@ class Program
         }
 
         void DisplayGoals()
-        // NOT DONE!
+        // DONE!
         {
             Console.WriteLine("List of Goals: ");
             int count = 1;
@@ -120,6 +121,8 @@ class Program
         }
 
         void Save(string lhSaveFileName)
+        // Need thing to be accessable first.
+        // Besides that finished.
         {
             try
             {
@@ -127,7 +130,7 @@ class Program
                 {
                     foreach (Goal goal in lhGoals)
                     {
-                        // Save each goal in the format: "Type~~Name~~Description~~Points~~Finished"
+                        // Saved in the format: "Type~~Name~~Description~~Points~~Finished"
                         outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}");
                     }
                 }
@@ -141,10 +144,12 @@ class Program
         }
 
         void Load(string lhLoadFileName)
+        // DONE!
+        // Unless things break after Save is fixed.
         {
             try
             {
-                // Clear existing goals before loading
+                // Clear existing goals before loading.
                 lhGoals.Clear();
 
                 string[] lines = File.ReadAllLines(lhLoadFileName);
@@ -152,14 +157,14 @@ class Program
                 {
                     string[] parts = line.Split("~~");
 
-                    // Parse values from the line
+                    // Parse values from the line.
                     string type = parts[0];
                     string name = parts[1];
                     string description = parts[2];
                     int points = int.Parse(parts[3]);
                     bool finished = bool.Parse(parts[4]);
 
-                    // Create a new goal based on the type
+                    // Create a new goal based on the type.
                     Goal loadedGoal;
                     switch (type)
                     {
@@ -176,11 +181,12 @@ class Program
                             loadedGoal = new Cheacklist(name, description, points, finished, count, finish, bonusPoints);
                             break;
                         default:
+                            // Shouldn't ever happen, but just in case.
                             Console.WriteLine($"Unknown goal type: {type}");
                             continue;
                     }
 
-                    // Add the loaded goal to the list
+                    // Add the loaded goal to the list.
                     lhGoals.Add(loadedGoal);
                 }
 
@@ -193,7 +199,7 @@ class Program
         }
 
         void Report()
-        // NOT DONE!
+        // DONE!
         {
             DisplayGoals();
             Console.WriteLine("Which goal would you like to check off? ");
@@ -222,7 +228,10 @@ class Program
                     break;
 
                 case 2:
+                    // For some reason it is not wanting to go into case 2 so
+                    // I put this print statment to see if it does or does not.
                     Console.WriteLine("Entering Case 2");
+
                     // Display Goals.
                     DisplayGoals();
                     break;
