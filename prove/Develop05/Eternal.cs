@@ -29,7 +29,14 @@ class srEternal : Goal
     //return a string containing the name and description of the goal
     public override string kpDisplayGoal()
     {
-        return "[ ]" + kpGetName() + " (" + kpGetDescription() + ")";
+        if (kpGetFinished())
+        {
+            return "[x]" + kpGetName() + " (" + kpGetDescription() + ")";
+        }
+        else
+        {
+            return "[ ]" + kpGetName() + " (" + kpGetDescription() + ")";
+        }
     }
 
     //this does something

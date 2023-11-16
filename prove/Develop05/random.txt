@@ -1,1 +1,3 @@
-Simple~~wqeewq~~erfwergfrweg~~34~~False
+Simple~~This Simple Goal~~This is the secription~~5~~True
+srEternal~~This is the Eternal Goal~~This is the decription~~10~~False
+Checklist~~This is the checklist~~This is the description~~15~~True

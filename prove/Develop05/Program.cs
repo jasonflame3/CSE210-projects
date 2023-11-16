@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Net.Http.Headers;
 
 /*
 W09 Prove: Developer 
@@ -25,33 +24,18 @@ class Program
             return lhFileName;
         }
 
-        // int GetUserInput(int maxValue)
-        // // DONE!
-        // {
-        //     int val = int.Parse(Console.ReadLine());
-        //     // If val is between 1 and the maxValue.
-        //     if (1 <= val && val <= maxValue)
-        //     {
-        //         return val;
-        //     }
-        //     // If val is outside of range then call method again.
-        //     else
-        //     {
-        //         return GetUserInput(maxValue);
-        //     }
-        // }
-
-
         int GetUserInput(int maxValue)
+        // DONE!
         {
             int val;
             while (!int.TryParse(Console.ReadLine(), out val) || val < 1 || val > maxValue)
             {
-                Console.WriteLine($"Please enter a valid input between 1 and {maxValue}: ");
+                Console.Write($"Please enter a valid input between 1 and {maxValue}: ");
             }
 
             return val;
         }
+
 
         void DisplayMenu()
         // DONE!
@@ -133,8 +117,7 @@ class Program
         }
 
         void Save(string lhSaveFileName)
-        // Need thing to be accessable first.
-        // Besides that finished.
+        // DONE!
         {
             try
             {
@@ -143,7 +126,15 @@ class Program
                     foreach (Goal goal in lhGoals)
                     {
                         // Saved in the format: "Type~~Name~~Description~~Points~~Finished"
-                        outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}");
+                        if (goal.kpGetName() != "Checklist")
+                        {
+                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.kpGetPoints}");
+                        }
+                        else
+                        {
+                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.kpGetPoints}");
+
+                        }
                     }
                 }
 
@@ -157,7 +148,6 @@ class Program
 
         void Load(string lhLoadFileName)
         // DONE!
-        // Unless things break after Save is fixed.
         {
             try
             {
