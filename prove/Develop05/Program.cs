@@ -114,8 +114,8 @@ class Program
             foreach (Goal goal in lhGoals)
             {
                 string countString = count.ToString();
-                Console.WriteLine(countString);
-                Console.WriteLine(goal.kpDisplayGoal());
+                Console.WriteLine($"{countString}: {goal.kpDisplayGoal()}");
+                // Console.WriteLine(goal.kpDisplayGoal());
                 count += 1;
             }
         }
@@ -219,7 +219,6 @@ class Program
         {
             DisplayMenu();
             int lhChoice = GetUserInput(6);
-            Console.WriteLine("Entering loop");
             switch (lhChoice)
             {
                 case 1:

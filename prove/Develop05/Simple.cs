@@ -36,7 +36,7 @@ class Simple : Goal
         }
         else 
         {
-            return $"[ ] {kpGetName()} ({kpGetDescription()}"; 
+            return $"[ ] {kpGetName()} ({kpGetDescription()})"; 
         }
     }
 
