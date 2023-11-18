@@ -114,6 +114,8 @@ class Program
                 // Console.WriteLine(goal.kpDisplayGoal());
                 count += 1;
             }
+            Console.Write("\nIf you are ready to go back to the menu press enter. ");
+            Console.ReadLine();
         }
 
         void Save(string lhSaveFileName)
