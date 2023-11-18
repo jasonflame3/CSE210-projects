@@ -52,6 +52,9 @@ public Checklist(string jcName,string jcDescription, int jcPoints, bool jcFinish
         }
         
     }
+    public int jcGetCount(){
+        return _jcCount;
+    }
     public override int kpReturnPoints()
     {
         // this calculates how many points one gets if they complete the goal. 
