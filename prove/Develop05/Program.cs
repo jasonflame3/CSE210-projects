@@ -125,16 +125,15 @@ class Program
                 {
                     foreach (Goal goal in lhGoals)
                     {
-                        // Saved in the format: "Type~~Name~~Description~~Points~~Finished"
-                        if (goal.kpGetName() != "Checklist")
+                        if (goal.GetType().Name == "Checklist")
                         {
-                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.kpGetPoints}");
+                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.kpReturnPoints()}");
                         }
                         else
                         {
-                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.kpGetPoints}");
-
+                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}");
                         }
+                        // Saved in the format: "Type~~Name~~Description~~Points~~Finished"
                     }
                 }
 
