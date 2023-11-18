@@ -4,7 +4,7 @@ using System.IO;
 /*
 W09 Prove: Developer 
 Title
-Sean Reading, Jason Chandler, Lindsay Hurdman, Kamas Peterson 
+Lindsay Hurdman, Sean Reading, Jason Chandler, Kamas Peterson 
 11/13/2023
 */
 

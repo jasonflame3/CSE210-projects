@@ -1,6 +1,13 @@
 using System.Diagnostics;
 using System.Reflection;
 
+/*
+W10 Prove : Developer 
+Check list 
+Jason Chandler, Sean Reading, Lindsay Hurdman, Kamas Peterson 
+(c) 2023
+*/
+
 class Checklist : Goal
 {
 private int _jcCount;
