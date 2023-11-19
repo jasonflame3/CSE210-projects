@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 
@@ -66,9 +67,19 @@ abstract class Goal
         return _kpFinished;
     }
     
+    public virtual int jcGetCount(){
+        Debug.Assert(false);
+        return 0;
+    }
+
+    public virtual int jcGetBonusPoints(){
+        Debug.Assert(false);
+        return 0;
+    }
     protected void jcSetFinished (bool jcFinish)
     {
         // Allows child class to set the finished. 
         _kpFinished = jcFinish;
     }
+
 }

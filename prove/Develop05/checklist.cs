@@ -52,11 +52,11 @@ public Checklist(string jcName,string jcDescription, int jcPoints, bool jcFinish
         }
         
     }
-    public int jcGetCount(){
+    public override int jcGetCount(){
         return _jcCount;
     }
 
-    public int jcGetBonusPoints(){
+    public override int jcGetBonusPoints(){
         return _jcBonusPoints;
     }
     public override int kpReturnPoints()
