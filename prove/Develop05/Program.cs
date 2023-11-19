@@ -41,14 +41,13 @@ class Program
         void DisplayMenu()
         // DONE!
         {
-            Console.Clear();
-            Console.WriteLine("Menu Options:");
+            Console.WriteLine("\nMenu Options:");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
             Console.WriteLine("3. Save Goals");
             Console.WriteLine("4. Load Goals");
             Console.WriteLine("5. Record Events");
-            Console.WriteLine("6. Quite");
+            Console.WriteLine("6. Quit");
             Console.Write("Pick an option from the menu: ");
         }
 
@@ -83,7 +82,7 @@ class Program
 
                 case 2:
                     // Eternal goals.
-                    srEternal eternal = new(lhNameOfGoal, lhDescription, lhPoints);
+                    srEternal eternal = new(lhNameOfGoal, lhDescription, lhPoints, 0);
                     lhGoals.Add(eternal);
                     break;
                     
@@ -108,15 +107,35 @@ class Program
         {
             Console.WriteLine("List of Goals: ");
             int count = 1;
+            int points = 0;
             foreach (Goal goal in lhGoals)
             {
                 string countString = count.ToString();
                 Console.WriteLine($"{countString}: {goal.kpDisplayGoal()}");
                 // Console.WriteLine(goal.kpDisplayGoal());
                 count += 1;
+                if (goal.kpFinished())
+                {
+                    points += goal.kpReturnPoints();
+                }
+                else if (goal.GetType().Name == "Checklist")
+                {
+                    if (goal.jcGetCount() > 0)
+                    {
+                        points += goal.kpReturnPoints();
+                    }
+                }
+                else if (goal.GetType().Name == "srEternal")
+                {
+                    if (goal.jcGetCount() > 0)
+                    {
+                        points += goal.kpReturnPoints() * goal.jcGetCount();
+                    }
+                }
+
             }
-            Console.Write("\nIf you are ready to go back to the menu press enter. ");
-            Console.ReadLine();
+            Console.WriteLine($"You have {points} points.");
+
         }
 
         void Save(string lhSaveFileName)
@@ -130,7 +149,11 @@ class Program
                     {
                         if (goal.GetType().Name == "Checklist")
                         {
-                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.jcGetCount()}~~{goal.kpFinished()}~~{goal.jcGetBonusPoints()}");
+                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.jcGetCount()}~~{goal.jcFinish()}~~{goal.jcGetBonusPoints()}");
+                        }
+                        else if (goal.GetType().Name == "srEternal")
+                        {
+                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.jcGetCount()}");
                         }
                         else
                         {
@@ -176,7 +199,8 @@ class Program
                             loadedGoal = new Simple(name, description, points, finished);
                             break;
                         case "srEternal":
-                            loadedGoal = new srEternal(name, description, points);
+                            int _count = int.Parse(parts[5]);
+                            loadedGoal = new srEternal(name, description, points, _count);
                             break;
                         case "Checklist":
                             int count = int.Parse(parts[5]);
@@ -216,7 +240,7 @@ class Program
                 selectedGoal.kpReport();
 
                 Console.WriteLine("Event recorded.");
-                Console.Write("Would you like record another goal? \n1. Yes \n2. No ");
+                Console.WriteLine("Would you like record another goal? \n1. Yes \n2. No ");
                 int reportChoice = GetUserInput(2);
                 if (reportChoice == 2)
                 {
@@ -267,7 +291,7 @@ class Program
                     break;
 
                 case 6:
-                    // Quite.
+                    // Quit.
                     lhDone = true;
                     break;
             }

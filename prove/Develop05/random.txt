@@ -1,1 +1,3 @@
-Checklist~~Check pleas~~work please~~1~~False~~0~~False~~12
+Simple~~Simple~~goal~~5~~False
+srEternal~~Eternal~~Goal~~10~~False~~0
+Checklist~~Checklist~~goal~~1~~False~~0~~3~~50

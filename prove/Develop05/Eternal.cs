@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Xml.XPath;
 
 /*
 W010 Prove: Developer 
@@ -11,14 +12,18 @@ Sean Reading, Jason Chandler, Lindsay Hurdman, Kamas Peterson
 
 class srEternal : Goal
 {
+    private int _count;
     //constructors
-    public srEternal(string name, string description, int points) : base(name, "Eternal", description, points, false) {}
+    public srEternal(string name, string description, int points, int count) : base(name, "Eternal", description, points, false) {
+    _count = count;
+    }
 
     //this is the goal that never ends; and it goes on and on my friends...
     public override bool kpFinished()
     {
         return false;
     }
+
 
     //return the number of points this goal is worth
     public override int kpReturnPoints()
@@ -29,19 +34,17 @@ class srEternal : Goal
     //return a string containing the name and description of the goal
     public override string kpDisplayGoal()
     {
-        if (kpGetFinished())
-        {
-            return "[x]" + kpGetName() + " (" + kpGetDescription() + ")";
-        }
-        else
-        {
-            return "[ ]" + kpGetName() + " (" + kpGetDescription() + ")";
-        }
+        return $"[{jcGetCount()}] " + kpGetName() + " (" + kpGetDescription() + ")";
     }
 
     //this does something
     public override void kpReport()
     {
-        
+        _count += 1;
+    }
+
+    public override int jcGetCount()
+    {
+        return _count;
     }
 }

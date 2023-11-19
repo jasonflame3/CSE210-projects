@@ -59,6 +59,9 @@ public Checklist(string jcName,string jcDescription, int jcPoints, bool jcFinish
     public override int jcGetBonusPoints(){
         return _jcBonusPoints;
     }
+    public override int jcFinish(){
+        return _jcFinish;
+    }
     public override int kpReturnPoints()
     {
         // this calculates how many points one gets if they complete the goal. 

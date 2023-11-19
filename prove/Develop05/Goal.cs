@@ -76,6 +76,12 @@ abstract class Goal
         Debug.Assert(false);
         return 0;
     }
+
+    public virtual int jcFinish()
+    {
+        Debug.Assert(false);
+        return 0;
+    }
     protected void jcSetFinished (bool jcFinish)
     {
         // Allows child class to set the finished. 
