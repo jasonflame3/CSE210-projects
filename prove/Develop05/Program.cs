@@ -223,6 +223,8 @@ class Program
                 }
 
                 Console.WriteLine("Goals loaded successfully.\n");
+                Console.Write("Press Enter to Continue: ");
+                Console.ReadLine();
             }
             catch (Exception ex)
             {
