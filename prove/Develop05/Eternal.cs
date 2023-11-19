@@ -34,7 +34,7 @@ class srEternal : Goal
     //return a string containing the name and description of the goal
     public override string kpDisplayGoal()
     {
-        return $"[{jcGetCount()}] " + kpGetName() + " (" + kpGetDescription() + ")";
+        return $"[ ] " + kpGetName() + " (" + kpGetDescription() + ") -- " + jcGetCount() + " times!";
     }
 
     //this does something

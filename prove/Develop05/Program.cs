@@ -105,7 +105,7 @@ class Program
         void DisplayGoals()
         // DONE!
         {
-            Console.WriteLine("List of Goals: ");
+            Console.WriteLine("\nList of Goals: ");
             int count = 1;
             int points = 0;
             foreach (Goal goal in lhGoals)
@@ -134,7 +134,9 @@ class Program
                 }
 
             }
-            Console.WriteLine($"You have {points} points.");
+            Console.WriteLine($"You have {points} points.\n");
+            // Console.Write("Press Enter to Continue: ");
+            // Console.ReadLine();
 
         }
 
@@ -164,6 +166,8 @@ class Program
                 }
 
                 Console.WriteLine($"Goals saved in {lhSaveFileName}.\n");
+                // Console.Write("Press Enter to Continue: ");
+                // Console.ReadLine();
             }
             catch (Exception ex)
             {
@@ -219,6 +223,8 @@ class Program
                 }
 
                 Console.WriteLine("Goals loaded successfully.\n");
+                // Console.Write("Press Enter to Continue: ");
+                // Console.ReadLine();
             }
             catch (Exception ex)
             {
@@ -233,7 +239,7 @@ class Program
             while (!reportDone)
             {
                 DisplayGoals();
-                Console.WriteLine("Which goal would you like to check off? ");
+                Console.Write("Which goal would you like to check off? ");
                 int goalIndex = GetUserInput(lhGoals.Count) - 1;
                 Goal selectedGoal = lhGoals[goalIndex];
 
@@ -291,6 +297,8 @@ class Program
                     lhDone = true;
                     break;
             }
+            Console.Write("Press Enter to Continue: ");
+            Console.ReadLine();
         }
     }
 }
