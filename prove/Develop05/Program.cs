@@ -135,9 +135,6 @@ class Program
 
             }
             Console.WriteLine($"You have {points} points.\n");
-            Console.Write("Press Enter to Continue: ");
-            Console.ReadLine();
-
         }
 
         void Save(string lhSaveFileName)
@@ -273,6 +270,8 @@ class Program
                 case 2:
                     // Display Goals.
                     DisplayGoals();
+                    Console.Write("Press Enter to Continue: ");
+                    Console.ReadLine();
                     break;
 
                 case 3:
