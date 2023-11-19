@@ -135,8 +135,8 @@ class Program
 
             }
             Console.WriteLine($"You have {points} points.\n");
-            // Console.Write("Press Enter to Continue: ");
-            // Console.ReadLine();
+            Console.Write("Press Enter to Continue: ");
+            Console.ReadLine();
 
         }
 
@@ -166,8 +166,8 @@ class Program
                 }
 
                 Console.WriteLine($"Goals saved in {lhSaveFileName}.\n");
-                // Console.Write("Press Enter to Continue: ");
-                // Console.ReadLine();
+                Console.Write("Press Enter to Continue: ");
+                Console.ReadLine();
             }
             catch (Exception ex)
             {
@@ -223,8 +223,6 @@ class Program
                 }
 
                 Console.WriteLine("Goals loaded successfully.\n");
-                // Console.Write("Press Enter to Continue: ");
-                // Console.ReadLine();
             }
             catch (Exception ex)
             {
@@ -297,8 +295,6 @@ class Program
                     lhDone = true;
                     break;
             }
-            Console.Write("Press Enter to Continue: ");
-            Console.ReadLine();
         }
     }
 }
