@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.IO;
 
 /*
@@ -129,7 +130,7 @@ class Program
                     {
                         if (goal.GetType().Name == "Checklist")
                         {
-                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~");
+                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{checklist.jcGetCount()}~~{goal.kpFinished()}~~{checklist.jcGetBonusPoints()}");
                         }
                         else
                         {
@@ -177,7 +178,7 @@ class Program
                         case "srEternal":
                             loadedGoal = new srEternal(name, description, points);
                             break;
-                        case "Cheacklist":
+                        case "Checklist":
                             int count = int.Parse(parts[5]);
                             int finish = int.Parse(parts[6]);
                             int bonusPoints = int.Parse(parts[7]);
@@ -204,15 +205,25 @@ class Program
         void Report()
         // DONE!
         {
-            DisplayGoals();
-            Console.WriteLine("Which goal would you like to check off? ");
-            int goalIndex = GetUserInput(lhGoals.Count) - 1;
-            Goal selectedGoal = lhGoals[goalIndex];
+            bool reportDone = false;
+            while (!reportDone)
+            {
+                DisplayGoals();
+                Console.WriteLine("Which goal would you like to check off? ");
+                int goalIndex = GetUserInput(lhGoals.Count) - 1;
+                Goal selectedGoal = lhGoals[goalIndex];
 
-            selectedGoal.kpReport();
+                selectedGoal.kpReport();
 
-            Console.WriteLine("Event recorded.\n");
-            
+                Console.WriteLine("Event recorded.");
+                Console.Write("Would you like record another goal? \n1. Yes \n2. No ");
+                int reportChoice = GetUserInput(2);
+                if (reportChoice == 2)
+                {
+                    reportDone = true;
+                }
+            }
+                
         }
 
         // DONE!
