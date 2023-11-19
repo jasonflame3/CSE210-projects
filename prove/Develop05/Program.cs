@@ -265,10 +265,6 @@ class Program
                     break;
 
                 case 2:
-                    // For some reason it is not wanting to go into case 2 so
-                    // I put this print statment to see if it does or does not.
-                    Console.WriteLine("Entering Case 2");
-
                     // Display Goals.
                     DisplayGoals();
                     break;
