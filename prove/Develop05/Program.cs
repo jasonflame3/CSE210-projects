@@ -130,7 +130,7 @@ class Program
                     {
                         if (goal.GetType().Name == "Checklist")
                         {
-                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{checklist.jcGetCount()}~~{goal.kpFinished()}~~{checklist.jcGetBonusPoints()}");
+                            outputFile.WriteLine($"{goal.GetType().Name}~~{goal.kpGetName()}~~{goal.kpGetDescription()}~~{goal.kpGetPoints()}~~{goal.kpGetFinished()}~~{goal.jcGetCount()}~~{goal.kpFinished()}~~{goal.jcGetBonusPoints()}");
                         }
                         else
                         {
