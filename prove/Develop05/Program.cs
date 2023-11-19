@@ -122,7 +122,7 @@ class Program
                 {
                     if (goal.jcGetCount() > 0)
                     {
-                        points += goal.kpReturnPoints();
+                        points += goal.kpReturnPoints() * goal.jcGetCount();
                     }
                 }
                 else if (goal.GetType().Name == "srEternal")

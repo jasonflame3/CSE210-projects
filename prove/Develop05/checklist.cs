@@ -69,7 +69,7 @@ public Checklist(string jcName,string jcDescription, int jcPoints, bool jcFinish
         Debug.Assert(_jcCount <= _jcFinish);
 
         if (_jcCount == _jcFinish){
-            tally += _jcBonusPoints + kpGetPoints();
+            tally += _jcBonusPoints + kpGetPoints() * _jcCount - 1;
         }
         else{
             tally += kpGetPoints();

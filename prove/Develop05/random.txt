@@ -1,3 +1,5 @@
 Simple~~Simple~~goal~~5~~False
 srEternal~~Eternal~~Goal~~10~~False~~0
 Checklist~~Checklist~~goal~~1~~False~~0~~3~~50
+Simple~~This is another goal~~this is the description~~100~~False
+Checklist~~this is another cool goal~~idk what to say~~23~~False~~0~~2~~1000
