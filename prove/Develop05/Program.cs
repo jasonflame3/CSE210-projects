@@ -41,6 +41,7 @@ class Program
         void DisplayMenu()
         // DONE!
         {
+            Console.Clear();
             Console.WriteLine("\nMenu Options:");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
@@ -249,6 +250,10 @@ class Program
                 {
                     reportDone = true;
                 }
+                else
+                {
+                    Console.Clear();
+                }
             }
                 
         }
@@ -260,6 +265,7 @@ class Program
         {
             DisplayMenu();
             int lhChoice = GetUserInput(6);
+            Console.Clear();
             switch (lhChoice)
             {
                 case 1:
