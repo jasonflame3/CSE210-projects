@@ -245,7 +245,7 @@ class Program
 
                 selectedGoal.kpReport();
 
-                Console.WriteLine("Event recorded.");
+                Console.WriteLine("Event recorded.\n");
                 Console.WriteLine("Would you like record another goal? \n1. Yes \n2. No ");
                 int reportChoice = GetUserInput(2);
                 if (reportChoice == 2)
