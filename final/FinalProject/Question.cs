@@ -1,18 +1,26 @@
 using System;
+using System.Collections.Generic;
 
 class Question
 {
-    string _questionTest;
-    string _answer;
-    string _pointValue;
+    private string _question;
 
-    static void DisplayQuestion()
+    private List<string> _answers;
+    //string _pointValue;
+
+    public Question(string question, List<string> answers)
     {
-
+        _question = question;
+        _answers = answers; 
     }
 
-    static void CheckAnswer(string playerAnswer)
+    public string GetQuestion()
     {
-        
+        return _question;
+    }
+
+    public bool CheckAnswer(string playerAnswer)
+    {
+        return _answers.Contains(playerAnswer);
     }
 }

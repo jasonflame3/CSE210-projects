@@ -1,15 +1,26 @@
 using System;
-using System.Formats.Asn1;
+using System.Collections.Generic;
 
 class Category
 {
-    string _name;
-    List<Question> questions;
-    //List<Answer> answers;
+    private string _name;
+    private List<Question> _questions;
 
-    static void GetAnswers(int answersIndex)
+    public Category(string name)
     {
+        _name = name;
+        _questions = new List<Question>();
+    }
 
+    public void AddQuestions(string question, List<string> answers)
+    {
+        Question newQuestion = new(question, answers);
+        _questions.Add(newQuestion);
+    }
+
+    public List<Question> GetQuestions()
+    {
+        return _questions;
     }
 
 }
