@@ -3,24 +3,17 @@ using System.Collections.Generic;
 
 class Category
 {
-    private string _name;
-    private List<Question> _questions;
+    public string Name { get; }
+    public List<Question> Questions { get; }
 
     public Category(string name)
     {
-        _name = name;
-        _questions = new List<Question>();
+        Name = name;
+        Questions = new List<Question>();
     }
 
-    public void AddQuestions(string question, List<string> answers)
+    public void AddQuestion(Question question)
     {
-        Question newQuestion = new(question, answers);
-        _questions.Add(newQuestion);
+        Questions.Add(question);
     }
-
-    public List<Question> GetQuestions()
-    {
-        return _questions;
-    }
-
 }

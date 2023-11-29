@@ -3,24 +3,16 @@ using System.Collections.Generic;
 
 class Question
 {
-    private string _question;
+    public string Description { get; }
+    public string Answer { get; }
+    public int Value { get; }
+    public bool IsAnswered { get; set; }
 
-    private List<string> _answers;
-    //string _pointValue;
-
-    public Question(string question, List<string> answers)
+    public Question(string description, string answer, int value)
     {
-        _question = question;
-        _answers = answers; 
-    }
-
-    public string GetQuestion()
-    {
-        return _question;
-    }
-
-    public bool CheckAnswer(string playerAnswer)
-    {
-        return _answers.Contains(playerAnswer);
+        Description = description;
+        Answer = answer;
+        Value = value;
+        IsAnswered = false;
     }
 }
