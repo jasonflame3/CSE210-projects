@@ -6,8 +6,14 @@ class Jeopardy
     public Jeopardy()
     {
         // Create players
-        Player player1 = new Player("Player 1");
-        Player player2 = new Player("Player 2");
+        Console.WriteLine("How many players are going to play? ");
+        string players = Console.ReadLine();
+        int numOfPlayers = int.Parse(players);
+        for (int i = 1; i <= numOfPlayers; i++)
+        {
+            Player player = new($"Player {i}");
+        }
+
 
         // Create categories
         Category historyCategory = new Category("History");
