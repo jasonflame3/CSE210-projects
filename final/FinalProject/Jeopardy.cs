@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Jeopardy
 {
-    static void Main()
+    public Jeopardy()
     {
         // Create players
         Player player1 = new Player("Player 1");
