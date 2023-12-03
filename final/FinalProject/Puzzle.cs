@@ -6,6 +6,7 @@ Kamas Peterson
 (c) 2023
 */
 
+// not a child of WheelofFortune
 public class Puzzle : WheelofFortune 
 {
     private List<string> _kpLetters = new List<string>();

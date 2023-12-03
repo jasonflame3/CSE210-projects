@@ -7,6 +7,7 @@ Kamas Peterson
 (c) 2023 
 */
 
+// letter is not a child of the wheeloffortune class
 public class Letter : WheelofFortune
 {
     private string _kpLetter;
@@ -28,7 +29,7 @@ public class Letter : WheelofFortune
     {
         
     }
-    public kpLetter(string kpLetter, string kpReveal, bool kpHidden)
+    public Letter(string kpLetter, string kpReveal, bool kpHidden)
     {
         _kpLetter = kpLetter;
         _kpReveal = kpReveal;
