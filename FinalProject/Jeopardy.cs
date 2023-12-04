@@ -65,7 +65,7 @@ class Jeopardy
 
             gameBoard.DisplayBoard();
 
-            Console.Write("\nEnter player buzzer (1 or 2): ");
+            Console.Write($"\nEnter player buzzer (1-{num_of_players}): ");
             int playerBuzzer = int.Parse(Console.ReadLine());
 
             Console.Write("Enter category index: ");
@@ -73,13 +73,17 @@ class Jeopardy
 
             Console.Write("Enter question index: ");
             int questionIndex = int.Parse(Console.ReadLine());
-
-            gameBoard.SelectQuestion(playerBuzzer == 1 ? player1 : player2, categoryIndex, questionIndex);
+            
+            gameBoard.SelectQuestion(playerBuzzer, categoryIndex, questionIndex);
         }
 
         // Display final scores
         Console.Clear();
         Console.WriteLine("Jeopardy Game Over!\n");
-        Console.WriteLine($"Final Scores: {player1.Name}: {player1.Score} | {player2.Name}: {player2.Score}");
+        foreach (Player player in playerList)
+        {
+            Console.WriteLine($"{player.Name()}: {player.Score()}");
+        }
+        //Console.WriteLine($"Final Scores: {player1.Name}: {player1.Score} | {player2.Name}: {player2.Score}");
     }
 }
