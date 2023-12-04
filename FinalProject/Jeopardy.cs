@@ -7,28 +7,33 @@ class Jeopardy
     {
         // Create players
         Console.WriteLine("How many players are going to play? ");
-        string players = Console.ReadLine();
-        int numOfPlayers = int.Parse(players);
+        string playersInput = Console.ReadLine();
+        int numOfPlayers = int.Parse(playersInput);
+        List<Player> playerList = new();
+
         for (int i = 1; i <= numOfPlayers; i++)
         {
-            Player player = new($"Player {i}");
+            string playerName = $"Player {i}";
+            Player cPlayer = new Player(playerName);
+            playerList.Add(cPlayer);
         }
 
+        Player player1 = new("player 1");
 
         // Create categories
-        Category historyCategory = new Category("History");
-        Category scienceCategory = new Category("Science");
-        Category sportsCategory = new Category("Sports");
+        Category historyCategory = new("History");
+        Category scienceCategory = new("Science");
+        Category sportsCategory = new("Sports");
 
         // Create questions
-        Question historyQ1 = new Question("What year did World War II end?", "1945", 200);
-        Question historyQ2 = new Question("Who was the first President of the United States?", "George Washington", 400);
+        Question historyQ1 = new("What year did World War II end?", "1945", 200);
+        Question historyQ2 = new("Who was the first President of the United States?", "George Washington", 400);
 
-        Question scienceQ1 = new Question("What is the chemical symbol for gold?", "Au", 200);
-        Question scienceQ2 = new Question("What is the largest planet in our solar system?", "Jupiter", 400);
+        Question scienceQ1 = new("What is the chemical symbol for gold?", "Au", 200);
+        Question scienceQ2 = new("What is the largest planet in our solar system?", "Jupiter", 400);
 
-        Question sportsQ1 = new Question("Which country won the FIFA World Cup in 2018?", "France", 200);
-        Question sportsQ2 = new Question("Who holds the record for the most Olympic gold medals?", "Michael Phelps", 400);
+        Question sportsQ1 = new("Which country won the FIFA World Cup in 2018?", "France", 200);
+        Question sportsQ2 = new("Who holds the record for the most Olympic gold medals?", "Michael Phelps", 400);
 
         // Add questions to categories
         historyCategory.AddQuestion(historyQ1);
@@ -41,7 +46,7 @@ class Jeopardy
         sportsCategory.AddQuestion(sportsQ2);
 
         // Create the game board
-        Board gameBoard = new Board();
+        Board gameBoard = new();
         gameBoard.AddCategory(historyCategory);
         gameBoard.AddCategory(scienceCategory);
         gameBoard.AddCategory(sportsCategory);
@@ -52,7 +57,11 @@ class Jeopardy
             Console.Clear();
             Console.WriteLine("Jeopardy Game\n");
 
-            Console.WriteLine($"Current Scores: {player1.Name}: {player1.Score} | {player2.Name}: {player2.Score}\n");
+            foreach (Player player in playerList)
+            {
+                Console.WriteLine($"{player.Name()}: {player.Score()}");
+            }
+            //Console.WriteLine($"Current Scores: {player1.Name()}: {player1.Score} | {player2.Name}: {player2.Score}\n");
 
             gameBoard.DisplayBoard();
 
